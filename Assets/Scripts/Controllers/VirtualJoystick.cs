@@ -2,13 +2,11 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class VirtualJoystick : MonoBehaviour
+public class VirtualJoystick : MonoBehaviour,IDragHandler,IPointerUpHandler,IPointerDownHandler
 {
+    public float limit = 250.0f;
     [SerializeField] private RectTransform stick = null;
     [SerializeField] private Image background = null;
-
-    public string player = "";
-    public float limit = 250.0f;
 
     public void OnPointerDown(PointerEventData eventData)
     {
@@ -56,7 +54,7 @@ public class VirtualJoystick : MonoBehaviour
         SetVertical(0f);
     }
 
-    private void SetHorizontal(float val) { InputManager.Instance.SetAxis("Horizontal" + player,val); }
+    private void SetHorizontal(float val) { InputManager.Instance.SetAxis("Horizontal",val); }
 
-    private void SetVertical(float val) { InputManager.Instance.SetAxis("Vertical" + player,val); }
+    private void SetVertical(float val) { InputManager.Instance.SetAxis("Vertical",val); }
 }

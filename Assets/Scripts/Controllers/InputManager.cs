@@ -1,13 +1,19 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class InputManager : MonoBehaviour
 {
-    private float giro;
     private Dictionary<string, float> axisValues = new Dictionary<string, float>();
     private Dictionary<string, bool> buttonValues = new Dictionary<string, bool>();
     private static InputManager instance;
+
+
+    private void Awake()
+    {
+        instance = this;
+    }
 
     public static InputManager Instance
     {
