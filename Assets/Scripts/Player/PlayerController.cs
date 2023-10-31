@@ -19,7 +19,7 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
-        if (InputManager.Instance.GetAxis("Vertical") > 0.1)
+        if (InputManager.Instance.GetAxis("Vertical") > 0.9)
         {
             if (canJunp)
             {
@@ -35,7 +35,7 @@ public class PlayerController : MonoBehaviour
             Debug.Log("Presed Space");
         }
 
-        if (transform.position.y <= 0.7)
+        if (transform.position.y <= 0.9)
             canJunp = true;
     }
 }
