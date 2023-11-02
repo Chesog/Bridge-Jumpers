@@ -5,30 +5,30 @@ using UnityEngine;
 
 public class BridgeController : MonoBehaviour
 {
-    [SerializeField] private GameObject bridgeHalfL;
-    [SerializeField] private GameObject bridgeHalfR;
+    [SerializeField] private BridgePart bridgeHalfL;
+    [SerializeField] private BridgePart bridgeHalfR;
     [SerializeField] private float Speed;
-    private bool canMove;
-
-    private void Start()
-    {
-        canMove = false;
-    }
 
     private void Update()
     {
-        if (bridgeHalfL.GetComponent<BridgePart>().IsColliding)
+        if (bridgeHalfL.IsColliding)
+        {
             bridgeHalfL.transform.position = bridgeHalfL.transform.position;
+            //bridgeHalfL.GetComponent<BridgePart>()._rigidbody.AddForce(new Vector3(0.0f,-Speed),ForceMode.Force);
+        }
         else
         {
-            bridgeHalfL.GetComponent<Rigidbody>().AddForce(new Vector3(Speed,0.0f),ForceMode.Force);
+            bridgeHalfL._rigidbody.AddForce(new Vector3(Speed,0.0f),ForceMode.Force);
         }
 
-        if (bridgeHalfR.GetComponent<BridgePart>().IsColliding)
+        if (bridgeHalfR.IsColliding)
+        {
             bridgeHalfR.transform.position = bridgeHalfR.transform.position;
+            //bridgeHalfR.GetComponent<BridgePart>()._rigidbody.AddForce(new Vector3(0.0f,-Speed),ForceMode.Force);
+        }
         else
         {
-            bridgeHalfR.GetComponent<Rigidbody>().AddForce(new Vector3(-Speed,0.0f),ForceMode.Force);
+            bridgeHalfR._rigidbody.AddForce(new Vector3(-Speed,0.0f),ForceMode.Force);
         }
     }
 }
