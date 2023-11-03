@@ -17,13 +17,14 @@ public class PlayerController : MonoBehaviour
         if (_rigidbody == null)
             _rigidbody = GetComponentInChildren<Rigidbody>();
     }
-
-    private void Update()
+    
+    private void FixedUpdate()
     {
         if (InputManager.Instance.GetAxis("Vertical") > 0.95)
         {
             if (isGrounded())
             {
+                _rigidbody.velocity = Vector3.zero;
                 _rigidbody.AddForce(_force, ForceMode.Impulse);
             }
         }
