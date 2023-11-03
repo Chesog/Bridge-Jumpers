@@ -11,9 +11,19 @@ public class BridgeController : MonoBehaviour,IProduct
     private ParticleSystem particleSystem;
     [SerializeField] private BridgePart bridgeHalfL;
     [SerializeField] private BridgePart bridgeHalfR;
+    [SerializeField] private Transform SpawnLeftPart;
+    [SerializeField] private Transform SpawnRightPart;
     [SerializeField] private float Speed;
 
-    private void Update()
+    private void OnEnable()
+    {
+        bridgeHalfL.transform.position = SpawnLeftPart.position;
+        bridgeHalfL.BridgePartReset();
+        bridgeHalfR.transform.position = SpawnRightPart.position;
+        bridgeHalfR.BridgePartReset();
+    }
+
+    private void FixedUpdate()
     {
         if (bridgeHalfL.IsColliding)
         {
@@ -33,6 +43,7 @@ public class BridgeController : MonoBehaviour,IProduct
             bridgeHalfR._rigidbody.AddForce(new Vector3(-Speed,0.0f),ForceMode.Force);
         }
     }
+
     public void Initialize()
     {
         // any unique logic to this product

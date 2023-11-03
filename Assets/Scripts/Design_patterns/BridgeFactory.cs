@@ -28,7 +28,7 @@ public class BridgeFactory : Factory <BridgeController>
     {
         BridgeController newProduct = null;
         
-        if (_factoryPool.Count > Decimal.Zero)
+        if (_factoryPool?.Count > Decimal.Zero)
         {
             newProduct = _factoryPool.First();
             newProduct.transform.position = position;

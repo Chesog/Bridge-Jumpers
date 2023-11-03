@@ -20,6 +20,13 @@ public class BridgePart : MonoBehaviour
         get { return isColliding; }
         private set { isColliding = value; }
     }
+
+    public void BridgePartReset()
+    {
+        isColliding = false;
+        _rigidbody.isKinematic = false;
+    }
+
     private void OnCollisionEnter(Collision other)
     {
         Debug.Log($"{nameof(this.gameObject)} is Colliding Whit : {other.collider.gameObject.tag}");
