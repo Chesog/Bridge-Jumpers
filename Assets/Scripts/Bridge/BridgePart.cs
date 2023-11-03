@@ -22,7 +22,7 @@ public class BridgePart : MonoBehaviour
     }
     private void OnCollisionEnter(Collision other)
     {
-        Debug.Log($"{nameof(gameObject)} is Colliding Whit : {other.collider.gameObject.tag}");
+        Debug.Log($"{nameof(this.gameObject)} is Colliding Whit : {other.collider.gameObject.tag}");
         if (other.collider.gameObject.tag == "Bridge")
         {
             isColliding = true;

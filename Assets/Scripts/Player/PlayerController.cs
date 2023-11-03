@@ -6,36 +6,65 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     [SerializeField] private Rigidbody _rigidbody;
-
+    [SerializeField] public GameObject _visuals;
+    [SerializeField] private bool canJump;
+    
     [SerializeField] private float _jumpforce;
     private Vector3 _force;
-    private bool canJunp;
+    [SerializeField] private float maxDistance;
+    [SerializeField] private double minJumpDistance;
 
     private void Start()
     {
         _force.y = _jumpforce;
-        canJunp = true;
+        if (_rigidbody == null)
+            _rigidbody = GetComponentInChildren<Rigidbody>();
     }
 
     private void Update()
     {
-        if (InputManager.Instance.GetAxis("Vertical") > 0.9)
+        if (InputManager.Instance.GetAxis("Vertical") > 0.95)
         {
-            if (canJunp)
+            if (isGrounded())
             {
-                _rigidbody.AddForce(_force,ForceMode.Impulse);
-                canJunp = false;
+                _rigidbody.AddForce(_force, ForceMode.Impulse);
             }
         }
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            _rigidbody.AddForce(_force,ForceMode.Impulse);
+            _rigidbody.AddForce(_force, ForceMode.Impulse);
             transform.position = transform.position += _force;
             Debug.Log("Presed Space");
         }
+    }
 
-        if (transform.position.y <= 0.9)
-            canJunp = true;
+    /// <summary>
+    /// Check If The Player Is At Ground Level
+    /// </summary>
+    /// <returns></returns>
+    public bool isGrounded()
+    {
+        return canJump;
+    }
+    private void OnCollisionEnter(Collision other)
+    {
+        Debug.Log(other.gameObject.tag);
+        if (other.gameObject.tag == "Bridge")
+            canJump = true;
+    }
+
+    private void OnCollisionStay(Collision other)
+    {
+        Debug.Log(other.gameObject.tag);
+        if (other.gameObject.tag == "Bridge")
+            canJump = true;
+    }
+
+    private void OnCollisionExit(Collision other)
+    {
+        Debug.Log(other.gameObject.tag);
+        if (other.gameObject.tag == "Bridge")
+            canJump = false;
     }
 }
