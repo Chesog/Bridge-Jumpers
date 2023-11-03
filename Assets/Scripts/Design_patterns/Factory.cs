@@ -9,8 +9,9 @@ public interface IProduct
     public void Initialize();
 }
 
-public abstract class Factory : MonoBehaviour
+public abstract class Factory <T> : MonoBehaviour
 {
+    protected List<T> _factoryPool;
     public abstract IProduct GetProduct(Vector3 position);
-
+    
 }
