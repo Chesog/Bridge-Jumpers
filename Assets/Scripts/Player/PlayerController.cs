@@ -6,14 +6,11 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     [SerializeField] private Rigidbody _rigidbody;
-    [SerializeField] public GameObject _visuals;
-    [SerializeField] private bool canJump;
+    public GameObject _visuals;
+    public bool canJump;
     
     [SerializeField] private float _jumpforce;
     private Vector3 _force;
-    [SerializeField] private float maxDistance;
-    [SerializeField] private double minJumpDistance;
-
     private void Start()
     {
         _force.y = _jumpforce;
@@ -46,25 +43,5 @@ public class PlayerController : MonoBehaviour
     public bool isGrounded()
     {
         return canJump;
-    }
-    private void OnCollisionEnter(Collision other)
-    {
-        Debug.Log(other.gameObject.tag);
-        if (other.gameObject.tag == "Bridge")
-            canJump = true;
-    }
-
-    private void OnCollisionStay(Collision other)
-    {
-        Debug.Log(other.gameObject.tag);
-        if (other.gameObject.tag == "Bridge")
-            canJump = true;
-    }
-
-    private void OnCollisionExit(Collision other)
-    {
-        Debug.Log(other.gameObject.tag);
-        if (other.gameObject.tag == "Bridge")
-            canJump = false;
     }
 }
