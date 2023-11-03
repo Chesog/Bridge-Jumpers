@@ -14,7 +14,6 @@ public class BridgeController : MonoBehaviour
         if (bridgeHalfL.IsColliding)
         {
             bridgeHalfL.transform.position = bridgeHalfL.transform.position;
-            //bridgeHalfL.GetComponent<BridgePart>()._rigidbody.AddForce(new Vector3(0.0f,-Speed),ForceMode.Force);
         }
         else
         {
@@ -24,7 +23,6 @@ public class BridgeController : MonoBehaviour
         if (bridgeHalfR.IsColliding)
         {
             bridgeHalfR.transform.position = bridgeHalfR.transform.position;
-            //bridgeHalfR.GetComponent<BridgePart>()._rigidbody.AddForce(new Vector3(0.0f,-Speed),ForceMode.Force);
         }
         else
         {
