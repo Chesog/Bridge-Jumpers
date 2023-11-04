@@ -1,22 +1,30 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class CameraController : MonoBehaviour
+namespace BridgeJumpers.CameraLogic
 {
-    [SerializeField] private PlayerController _player;
-    
-    private void FixedUpdate()
+    public class CameraController : MonoBehaviour
     {
-        if (_player.isGrounded())
+        [SerializeField] private PlayerController _player;
+        [SerializeField] private float _cameraSpeed;
+        [SerializeField] private Vector2 _cameraOffset;
+    
+        private void FixedUpdate()
         {
+            //if (_player.isGrounded())
+            //{
+            //    Vector3 originalPos = transform.position;
+            //    Vector3 newPos = _player._visuals.transform.position;
+            //    newPos.z += _cameraOffset.x;
+            //    newPos.y += _cameraOffset.y;
+            //    transform.position = Vector3.Lerp(originalPos, newPos,_cameraSpeed * Time.deltaTime);
+            //}
+        
             Vector3 originalPos = transform.position;
             Vector3 newPos = _player._visuals.transform.position;
-            newPos.y += 3.78f;
-            newPos.z -= 10.0f;
-            transform.position = Vector3.Lerp(originalPos, newPos, Time.deltaTime);
-            //transform.position = newPos;
+            newPos.z += _cameraOffset.x;
+            newPos.y += _cameraOffset.y;
+            transform.position = Vector3.Lerp(originalPos, newPos,_cameraSpeed * Time.deltaTime);
         }
     }
 }
+
