@@ -9,6 +9,7 @@ public class WatterBehaviour : MonoBehaviour
     [SerializeField] private Rigidbody _rigidbody;
     [SerializeField] private float _moveTime;
     [SerializeField] private Vector3 _force;
+
     private void FixedUpdate()
     {
         if (!_isCorrutineRuning)
@@ -17,12 +18,12 @@ public class WatterBehaviour : MonoBehaviour
             StartCoroutine(MoveWatter());
         }
     }
-    
+
     private IEnumerator MoveWatter()
     {
         _isCorrutineRuning = true;
         yield return new WaitForSeconds(_moveTime);
-        _rigidbody.AddForce(_force,ForceMode.Force);
+        _rigidbody.AddForce(_force, ForceMode.Force);
         yield return null;
         _isCorrutineRuning = false;
         yield return null;
@@ -30,8 +31,16 @@ public class WatterBehaviour : MonoBehaviour
 
     private void OnCollisionEnter(Collision other)
     {
-        if(other.collider.tag == "Bridge")
-            BridgeFactory.Instance?.DestroyProduct(other.collider?.GetComponentInParent<BridgeController>());
+        BridgeController temp = null;
+        if (other.collider.tag == "Bridge")
+        {
+            if (other.collider.name == "RightPart")
+            {
+                temp = other.collider?.GetComponentInParent<BridgeController>();
+                temp.OnDestroyBridge.Invoke(temp); 
+            }
+        }
+
         if (other.collider.tag == "Spawn")
             Destroy(other.collider.gameObject);
     }

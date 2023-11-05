@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class BridgeController : MonoBehaviour,IProduct
 {
@@ -14,6 +15,8 @@ public class BridgeController : MonoBehaviour,IProduct
     [SerializeField] private Transform SpawnLeftPart;
     [SerializeField] private Transform SpawnRightPart;
     [SerializeField] private float Speed;
+
+    public UnityEvent <BridgeController> OnDestroyBridge;
 
     private void OnEnable()
     {

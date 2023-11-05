@@ -177,6 +177,9 @@ MonoBehaviour:
   SpawnLeftPart: {fileID: 850368558}
   SpawnRightPart: {fileID: 934431759}
   Speed: 1
+  OnDestroyBridge:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &9596587
 GameObject:
   m_ObjectHideFlags: 0
@@ -1435,7 +1438,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1279324476
 Transform:
   m_ObjectHideFlags: 0
@@ -1445,7 +1448,7 @@ Transform:
   m_GameObject: {fileID: 1279324475}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.541031, y: -3.6587691, z: 8.574172}
+  m_LocalPosition: {x: 0, y: 2.88, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1453,7 +1456,7 @@ Transform:
   - {fileID: 495759600}
   - {fileID: 1249312573}
   - {fileID: 1467925708}
-  m_Father: {fileID: 1888626623}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1279324477
 MonoBehaviour:
@@ -1473,6 +1476,9 @@ MonoBehaviour:
   SpawnLeftPart: {fileID: 1249312573}
   SpawnRightPart: {fileID: 1467925708}
   Speed: 1
+  OnDestroyBridge:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1294845212
 GameObject:
   m_ObjectHideFlags: 0
@@ -2224,7 +2230,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1888626623}
-  - component: {fileID: 1888626624}
   - component: {fileID: 1888626625}
   m_Layer: 0
   m_Name: BridgeManager
@@ -2246,23 +2251,9 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1279324476}
   - {fileID: 174880}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1888626624
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1888626622}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a57b9e04d8a48c7488a5b4871ca4a1ae, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  productPrefab: {fileID: 174881}
 --- !u!114 &1888626625
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2276,8 +2267,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _spawnTime: 2
+  productPrefab: {fileID: 174881}
   _currentBridge: {fileID: 1279324477}
   isCorrutineRuning: 0
+  firstBridgeSpawn: {x: 0, y: 2.88, z: 0}
 --- !u!1 &1940696325
 GameObject:
   m_ObjectHideFlags: 0
@@ -2593,4 +2586,5 @@ SceneRoots:
   - {fileID: 1866061489}
   - {fileID: 1861584903}
   - {fileID: 1888626623}
+  - {fileID: 1279324476}
   - {fileID: 526595326}
