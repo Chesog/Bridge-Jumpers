@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class BridgeFactory : Factory <BridgeController>
 {
-    private static BridgeFactory _instance = new BridgeFactory();
+    private static BridgeFactory _instance;
     [SerializeField] private BridgeController productPrefab;
     
     private void Awake()
@@ -58,10 +58,10 @@ public class BridgeFactory : Factory <BridgeController>
         }
     }
 
-    private void DestroyProduct(BridgeController productPrefab)
+    public void DestroyProduct(BridgeController productPrefab)
     {
-        productPrefab.gameObject.SetActive(false);
+        productPrefab.gameObject?.SetActive(false);
         productPrefab.gameObject.transform.position = Vector3.zero;
-        _factoryPool.Add(productPrefab);
+        _factoryPool?.Add(productPrefab);
     }
 }

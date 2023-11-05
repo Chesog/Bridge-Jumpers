@@ -25,6 +25,7 @@ public class BridgePart : MonoBehaviour
     {
         isColliding = false;
         _rigidbody.isKinematic = false;
+        GetComponent<BoxCollider>().enabled = true;
     }
 
     private void OnCollisionEnter(Collision other)
