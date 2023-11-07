@@ -14,7 +14,6 @@ public class CollitionController : MonoBehaviour
 
     private void OnCollisionStay(Collision other)
     {
-        Debug.Log(other.gameObject.tag);
         if (other.gameObject.tag == "Bridge")
             _player.canJump = true;
     }

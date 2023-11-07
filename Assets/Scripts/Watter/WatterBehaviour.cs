@@ -6,16 +6,32 @@ using UnityEngine;
 public class WatterBehaviour : MonoBehaviour
 {
     [SerializeField] private bool _isCorrutineRuning;
+    [SerializeField] private bool _canMove;
     [SerializeField] private Rigidbody _rigidbody;
     [SerializeField] private float _moveTime;
     [SerializeField] private Vector3 _force;
+
+
+    private void OnEnable()
+    {
+        _isCorrutineRuning = false;
+        _canMove = true;
+    }
 
     private void FixedUpdate()
     {
         if (!_isCorrutineRuning)
         {
-            StopCoroutine(MoveWatter());
-            StartCoroutine(MoveWatter());
+            if (_canMove)
+            {
+                StopCoroutine(MoveWatter());
+                StartCoroutine(MoveWatter());
+            }
+            else
+            {
+                StopAllCoroutines();
+            }
+            
         }
     }
 
@@ -43,5 +59,11 @@ public class WatterBehaviour : MonoBehaviour
 
         if (other.collider.tag == "Spawn")
             Destroy(other.collider.gameObject);
+
+        if (other.collider.tag == "Player")
+        {
+            other.collider.GetComponentInParent<PlayerController>().DestroyPlayer();
+            _canMove = false;
+        }
     }
 }

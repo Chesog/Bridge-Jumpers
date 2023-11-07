@@ -4,11 +4,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class BridgeController : MonoBehaviour,IProduct
+public class BridgeController : MonoBehaviour, IProduct
 {
-    
     [SerializeField] private string productName = "BridgeController";
-    public string ProductName { get => productName; set => productName = value ; }
+
+    public string ProductName
+    {
+        get => productName;
+        set => productName = value;
+    }
+
     private ParticleSystem particleSystem;
     [SerializeField] private BridgePart bridgeHalfL;
     [SerializeField] private BridgePart bridgeHalfR;
@@ -16,7 +21,7 @@ public class BridgeController : MonoBehaviour,IProduct
     [SerializeField] private Transform SpawnRightPart;
     [SerializeField] private float Speed;
 
-    public UnityEvent <BridgeController> OnDestroyBridge;
+    public UnityEvent<BridgeController> OnDestroyBridge;
 
     private void OnEnable()
     {
@@ -34,7 +39,7 @@ public class BridgeController : MonoBehaviour,IProduct
         }
         else
         {
-            bridgeHalfL._rigidbody.AddForce(new Vector3(Speed,0.0f),ForceMode.Force);
+            bridgeHalfL._rigidbody.AddForce(new Vector3(Speed, 0.0f), ForceMode.Force);
         }
 
         if (bridgeHalfR.IsColliding)
@@ -43,7 +48,7 @@ public class BridgeController : MonoBehaviour,IProduct
         }
         else
         {
-            bridgeHalfR._rigidbody.AddForce(new Vector3(-Speed,0.0f),ForceMode.Force);
+            bridgeHalfR._rigidbody.AddForce(new Vector3(-Speed, 0.0f), ForceMode.Force);
         }
     }
 
