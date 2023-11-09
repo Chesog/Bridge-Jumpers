@@ -342,9 +342,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _isCorrutineRuning: 0
+  _canMove: 0
   _rigidbody: {fileID: 526595328}
-  _moveTime: 2
-  _force: {x: 0, y: 10, z: 0}
+  _moveTime: 1
+  _force: {x: 0, y: 100, z: 0}
 --- !u!54 &526595328
 Rigidbody:
   m_ObjectHideFlags: 0
