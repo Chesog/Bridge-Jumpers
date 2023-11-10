@@ -6,6 +6,7 @@ using UnityEngine;
 public class BridgePart : MonoBehaviour
 {
     [SerializeField] private bool isColliding;
+    [SerializeField] private bool isAHalfBridge;
     public Rigidbody _rigidbody;
 
 
@@ -13,6 +14,8 @@ public class BridgePart : MonoBehaviour
     {
         if (_rigidbody == null)
             _rigidbody = GetComponent<Rigidbody>();
+        if (isAHalfBridge)
+            _rigidbody.isKinematic = true;
     }
 
     public bool IsColliding

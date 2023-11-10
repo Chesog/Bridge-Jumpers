@@ -9,12 +9,14 @@ public class PlayerController : MonoBehaviour
     public GameObject _visuals;
     public bool canJump;
     
-    [SerializeField] private float _jumpforce;
+    [SerializeField] private Vector3 _verticalforce;
+    [SerializeField] private Vector3 _horizontalforce;
     [SerializeField] private int _playerScore;
-    private Vector3 _force;
+    [SerializeField] private float _maxTouchY;
+    [SerializeField] private float _maxTouchX;
+   
     private void Start()
     {
-        _force.y = _jumpforce;
         if (_rigidbody == null)
             _rigidbody = GetComponentInChildren<Rigidbody>();
         ResetPlayerScore();
@@ -23,19 +25,32 @@ public class PlayerController : MonoBehaviour
     
     private void FixedUpdate()
     {
-        if (InputManager.Instance.GetAxis("Vertical") > 0.95)
+        if (InputManager.Instance.GetAxis("Vertical") > _maxTouchY)
         {
             if (isGrounded())
             {
                 _rigidbody.velocity = Vector3.zero;
-                _rigidbody.AddForce(_force, ForceMode.Impulse);
+                _rigidbody.AddForce(_verticalforce, ForceMode.Impulse);
             }
         }
 
+        if (InputManager.Instance.GetAxis("Horizontal") > _maxTouchX)
+        {
+            _rigidbody.AddForce(_horizontalforce, ForceMode.Force);
+        }
+        
+        if (InputManager.Instance.GetAxis("Horizontal") < -_maxTouchX)
+        {
+            Vector3 aux = Vector3.zero;
+            aux.x = - _horizontalforce.x;
+            _rigidbody.AddForce(aux, ForceMode.Force);
+        }
+       
+
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            _rigidbody.AddForce(_force, ForceMode.Impulse);
-            transform.position = transform.position += _force;
+            _rigidbody.AddForce(_verticalforce, ForceMode.Impulse);
+            transform.position = transform.position += _verticalforce;
             Debug.Log("Presed Space");
         }
     }

@@ -45,24 +45,25 @@ public class WatterBehaviour : MonoBehaviour
         yield return null;
     }
 
-    private void OnCollisionEnter(Collision other)
+
+    private void OnTriggerEnter(Collider other)
     {
         BridgeController temp = null;
-        if (other.collider.tag == "Bridge")
+        if (other.tag == "Bridge")
         {
-            if (other.collider.name == "RightPart")
+            if (other.name == "RightPart")
             {
-                temp = other.collider?.GetComponentInParent<BridgeController>();
+                temp = other?.GetComponentInParent<BridgeController>();
                 temp.OnDestroyBridge.Invoke(temp); 
             }
         }
 
-        if (other.collider.tag == "Spawn")
-            Destroy(other.collider.gameObject);
+        if (other.tag == "Spawn")
+            Destroy(other.gameObject);
 
-        if (other.collider.tag == "Player")
+        if (other.tag == "Player")
         {
-            other.collider.GetComponentInParent<PlayerController>().DestroyPlayer();
+            other.GetComponentInParent<PlayerController>().DestroyPlayer();
             _canMove = false;
         }
     }

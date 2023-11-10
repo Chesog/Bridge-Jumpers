@@ -3,14 +3,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Pool;
+using Random = UnityEngine.Random;
 
 public class BridgeManager : MonoBehaviour
 {
     [SerializeField] private float _spawnTime;
     [SerializeField] private BridgeFactory _factory = new BridgeFactory();
-    [SerializeField] private BridgeController productPrefab;
+    [SerializeField] private BridgeController[] productPrefab;
     [SerializeField] private BridgeController _currentBridge;
     [SerializeField] private bool isCorrutineRuning;
+    [SerializeField] private bool spawnHalfBridge;
     [SerializeField] private Vector3 firstBridgeSpawn;
     private ObjectPool<BridgeController> _objectPool;
 
@@ -27,12 +29,12 @@ public class BridgeManager : MonoBehaviour
     {
         if (!isCorrutineRuning)
         {
-            StopCoroutine(SpawnBridge());
-            StartCoroutine(SpawnBridge());
+            StopCoroutine(SpawnBridge(spawnHalfBridge));
+            StartCoroutine(SpawnBridge(spawnHalfBridge));
         }
     }
 
-    private IEnumerator SpawnBridge()
+    private IEnumerator SpawnBridge(bool spawnHalfBridge)
     {
         BridgeController temp = null;
         isCorrutineRuning = true;
@@ -40,7 +42,10 @@ public class BridgeManager : MonoBehaviour
         _objectPool.Get(out temp);
         Vector3 spawnPos = _currentBridge.transform.position;
         spawnPos.y += 3.65f;
-        _factory.ConfigureBridge(spawnPos,temp);
+        if (spawnHalfBridge)
+            spawnPos.x = 0.0f;
+
+        _factory.ConfigureBridge(spawnPos, temp);
         temp.OnDestroyBridge.AddListener(OnDestroyedBridge);
         //_currentBridge = (BridgeController)BridgeFactory.Instance.GetProduct(spawnPos);
         _currentBridge = temp;
@@ -53,7 +58,7 @@ public class BridgeManager : MonoBehaviour
     {
         BridgeController temp = null;
         _objectPool.Get(out temp);
-        _factory.ConfigureBridge(firstBridgeSpawn,temp);
+        _factory.ConfigureBridge(firstBridgeSpawn, temp);
         temp.OnDestroyBridge.AddListener(OnDestroyedBridge);
         _currentBridge = temp;
     }
@@ -67,6 +72,13 @@ public class BridgeManager : MonoBehaviour
 
     private BridgeController CreatePoolObject()
     {
-        return _factory.CreatePool(Vector3.zero, productPrefab);
+        int bridgeToSpawn = 0;
+
+        if (!spawnHalfBridge)
+            bridgeToSpawn = 0;
+        else
+            bridgeToSpawn = Random.Range(1, productPrefab.Length);
+
+        return _factory.CreatePool(Vector3.zero, productPrefab[bridgeToSpawn]);
     }
 }
