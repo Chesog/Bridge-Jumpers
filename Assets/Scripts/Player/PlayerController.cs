@@ -13,7 +13,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Vector3 _horizontalforce;
     [SerializeField] private int _playerScore;
     [SerializeField] private float _maxTouchY;
-    [SerializeField] private float _maxTouchX;
+    [SerializeField] private float _moveSpeed;
    
     private void Start()
     {
@@ -33,20 +33,10 @@ public class PlayerController : MonoBehaviour
                 _rigidbody.AddForce(_verticalforce, ForceMode.Impulse);
             }
         }
-
-        if (InputManager.Instance.GetAxis("Horizontal") > _maxTouchX)
-        {
-            _rigidbody.AddForce(_horizontalforce, ForceMode.Force);
-        }
         
-        if (InputManager.Instance.GetAxis("Horizontal") < -_maxTouchX)
-        {
-            Vector3 aux = Vector3.zero;
-            aux.x = - _horizontalforce.x;
-            _rigidbody.AddForce(aux, ForceMode.Force);
-        }
-       
-
+        _horizontalforce.x = InputManager.Instance.GetAxis("Horizontal") * _moveSpeed;
+        _rigidbody.AddForce(_horizontalforce, ForceMode.Force);
+        
         if (Input.GetKeyDown(KeyCode.Space))
         {
             _rigidbody.AddForce(_verticalforce, ForceMode.Impulse);
