@@ -5,8 +5,8 @@ using UnityEngine;
 
 public class WatterBehaviour : MonoBehaviour
 {
+    public bool _canMove;
     [SerializeField] private bool _isCorrutineRuning;
-    [SerializeField] private bool _canMove;
     [SerializeField] private Rigidbody _rigidbody;
     [SerializeField] private float _moveTime;
     [SerializeField] private Vector3 _force;
@@ -29,6 +29,7 @@ public class WatterBehaviour : MonoBehaviour
             }
             else
             {
+                _rigidbody.velocity = Vector3.zero;
                 StopAllCoroutines();
             }
             

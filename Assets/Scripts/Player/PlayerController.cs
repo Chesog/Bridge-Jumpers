@@ -2,18 +2,22 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class PlayerController : MonoBehaviour
 {
-    [SerializeField] private Rigidbody _rigidbody;
     public GameObject _visuals;
     public bool canJump;
+    public UnityAction OnPlayerDead;
     
+    [SerializeField] private Rigidbody _rigidbody;
     [SerializeField] private Vector3 _verticalforce;
     [SerializeField] private Vector3 _horizontalforce;
     [SerializeField] private int _playerScore;
     [SerializeField] private float _maxTouchY;
     [SerializeField] private float _moveSpeed;
+
+ 
    
     private void Start()
     {
@@ -48,7 +52,13 @@ public class PlayerController : MonoBehaviour
     public void AddPlayerScore(int value) { _playerScore += value; }
     public int GetPlayerScore() { return _playerScore; }
     public void ResetPlayerScore() { _playerScore = 0; }
-    public void DestroyPlayer() { gameObject.SetActive(false); }
+
+    public void DestroyPlayer()
+    {
+        GameManager.Instance.SetPlayerHighScore(_playerScore);
+        OnPlayerDead?.Invoke();
+        gameObject.SetActive(false);
+    }
     public void RespawnPlayer() { gameObject.SetActive(true); }
 
     /// <summary>

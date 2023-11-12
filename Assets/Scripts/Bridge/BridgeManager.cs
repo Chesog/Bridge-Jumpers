@@ -7,12 +7,13 @@ using Random = UnityEngine.Random;
 
 public class BridgeManager : MonoBehaviour
 {
+     public bool canSpawn;
+    
     [SerializeField] private float _spawnTime;
     [SerializeField] private BridgeFactory _factory = new BridgeFactory();
     [SerializeField] private BridgeController[] productPrefab;
     [SerializeField] private BridgeController _currentBridge;
     [SerializeField] private bool isCorrutineRuning;
-    [SerializeField] private bool spawnHalfBridge;
     [SerializeField] private bool spawnFirstBridge;
     [SerializeField] private Vector3 firstBridgeSpawn;
     private ObjectPool<BridgeController> _objectPool;
@@ -23,15 +24,24 @@ public class BridgeManager : MonoBehaviour
             bridge => { bridge.gameObject.SetActive(true); }, bridge => { bridge.gameObject.SetActive(false); },
             bridge => { Destroy(bridge.gameObject); }, false, 20, 50);
         isCorrutineRuning = false;
+        spawnFirstBridge = true;
+        canSpawn = true;
         SpawnFirstBridge();
     }
 
     private void Update()
     {
-        if (!isCorrutineRuning)
+        if (canSpawn)
         {
-            StopCoroutine(SpawnBridge());
-            StartCoroutine(SpawnBridge());
+            if (!isCorrutineRuning)
+            {
+                StopCoroutine(SpawnBridge());
+                StartCoroutine(SpawnBridge());
+            }
+        }
+        else
+        {
+            StopAllCoroutines();
         }
     }
 
