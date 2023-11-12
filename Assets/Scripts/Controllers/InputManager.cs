@@ -6,7 +6,7 @@ using UnityEngine;
 public class InputManager : MonoBehaviour
 {
     private Dictionary<string, float> axisValues = new Dictionary<string, float>();
-    private Dictionary<string, bool> buttonValues = new Dictionary<string, bool>();
+   private Dictionary<string, bool> buttonValues = new Dictionary<string, bool>();
     private static InputManager instance;
 
 

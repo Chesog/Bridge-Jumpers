@@ -46,6 +46,7 @@ public class PlayerController : MonoBehaviour
     }
 
     public void AddPlayerScore(int value) { _playerScore += value; }
+    public int GetPlayerScore() { return _playerScore; }
     public void ResetPlayerScore() { _playerScore = 0; }
     public void DestroyPlayer() { gameObject.SetActive(false); }
     public void RespawnPlayer() { gameObject.SetActive(true); }
