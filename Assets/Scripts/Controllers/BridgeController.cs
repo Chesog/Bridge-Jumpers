@@ -4,6 +4,7 @@ using UnityEngine.Events;
 public class BridgeController : MonoBehaviour, IProduct
 {
     [SerializeField] private string productName = "BridgeController";
+    [SerializeField] private BridgeController[] possibleNeighbors;
 
     public string ProductName
     {
@@ -48,6 +49,8 @@ public class BridgeController : MonoBehaviour, IProduct
             bridgeHalfR._rigidbody.AddForce(new Vector3(-Speed, 0.0f), ForceMode.Force);
         }
     }
+
+    public BridgeController[] GetPossibleNeighbors() { return possibleNeighbors; }
 
     public void Initialize()
     {

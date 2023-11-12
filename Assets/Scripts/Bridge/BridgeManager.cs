@@ -13,6 +13,7 @@ public class BridgeManager : MonoBehaviour
     [SerializeField] private BridgeController _currentBridge;
     [SerializeField] private bool isCorrutineRuning;
     [SerializeField] private bool spawnHalfBridge;
+    [SerializeField] private bool spawnFirstBridge;
     [SerializeField] private Vector3 firstBridgeSpawn;
     private ObjectPool<BridgeController> _objectPool;
 
@@ -29,12 +30,12 @@ public class BridgeManager : MonoBehaviour
     {
         if (!isCorrutineRuning)
         {
-            StopCoroutine(SpawnBridge(spawnHalfBridge));
-            StartCoroutine(SpawnBridge(spawnHalfBridge));
+            StopCoroutine(SpawnBridge());
+            StartCoroutine(SpawnBridge());
         }
     }
 
-    private IEnumerator SpawnBridge(bool spawnHalfBridge)
+    private IEnumerator SpawnBridge()
     {
         BridgeController temp = null;
         isCorrutineRuning = true;
@@ -42,8 +43,6 @@ public class BridgeManager : MonoBehaviour
         _objectPool.Get(out temp);
         Vector3 spawnPos = _currentBridge.transform.position;
         spawnPos.y += 3.65f;
-        if (spawnHalfBridge)
-            spawnPos.x = 0.0f;
 
         _factory.ConfigureBridge(spawnPos, temp);
         temp.OnDestroyBridge.AddListener(OnDestroyedBridge);
@@ -73,12 +72,14 @@ public class BridgeManager : MonoBehaviour
     private BridgeController CreatePoolObject()
     {
         int bridgeToSpawn = 0;
-
-        if (!spawnHalfBridge)
-            bridgeToSpawn = 0;
-        else
-            bridgeToSpawn = Random.Range(1, productPrefab.Length);
-
-        return _factory.CreatePool(Vector3.zero, productPrefab[bridgeToSpawn]);
+        if (spawnFirstBridge)
+        {
+            spawnFirstBridge = false;
+            return _factory.CreatePool(Vector3.zero, productPrefab[bridgeToSpawn]);
+        }
+        
+        bridgeToSpawn = Random.Range(0, _currentBridge.GetPossibleNeighbors().Length);
+        
+        return _factory.CreatePool(Vector3.zero, _currentBridge.GetPossibleNeighbors()[bridgeToSpawn]);
     }
 }

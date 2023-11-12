@@ -1661,6 +1661,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Half Bridge R
       objectReference: {fileID: 0}
+    - target: {fileID: 6343501118559005090, guid: 8709e09a08e08d04aac52767f36fc845, type: 3}
+      propertyPath: possibleNeighbors.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6343501118559005090, guid: 8709e09a08e08d04aac52767f36fc845, type: 3}
+      propertyPath: possibleNeighbors.Array.data[0]
+      value: 
+      objectReference: {fileID: 174881}
+    - target: {fileID: 6343501118559005090, guid: 8709e09a08e08d04aac52767f36fc845, type: 3}
+      propertyPath: possibleNeighbors.Array.data[1]
+      value: 
+      objectReference: {fileID: 6343501116921125854}
     - target: {fileID: 7578292761146837208, guid: 8709e09a08e08d04aac52767f36fc845, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -1741,6 +1753,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bridge (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 7183158470802979186, guid: c5c003605f6eb53458cc63efda3bf3c7, type: 3}
+      propertyPath: possibleNeighbors.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7183158470802979186, guid: c5c003605f6eb53458cc63efda3bf3c7, type: 3}
+      propertyPath: possibleNeighbors.Array.data[0]
+      value: 
+      objectReference: {fileID: 174881}
+    - target: {fileID: 7183158470802979186, guid: c5c003605f6eb53458cc63efda3bf3c7, type: 3}
+      propertyPath: possibleNeighbors.Array.data[1]
+      value: 
+      objectReference: {fileID: 4650782375296812754}
+    - target: {fileID: 7183158470802979186, guid: c5c003605f6eb53458cc63efda3bf3c7, type: 3}
+      propertyPath: possibleNeighbors.Array.data[2]
+      value: 
+      objectReference: {fileID: 6343501116921125854}
     - target: {fileID: 7318916435009497446, guid: c5c003605f6eb53458cc63efda3bf3c7, type: 3}
       propertyPath: m_IsTrigger
       value: 0
@@ -1875,6 +1903,18 @@ PrefabInstance:
       propertyPath: m_UseGravity
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8364300181507402059, guid: d4abc09542f61e646bb6874f3f9f82d0, type: 3}
+      propertyPath: possibleNeighbors.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8364300181507402059, guid: d4abc09542f61e646bb6874f3f9f82d0, type: 3}
+      propertyPath: possibleNeighbors.Array.data[0]
+      value: 
+      objectReference: {fileID: 174881}
+    - target: {fileID: 8364300181507402059, guid: d4abc09542f61e646bb6874f3f9f82d0, type: 3}
+      propertyPath: possibleNeighbors.Array.data[1]
+      value: 
+      objectReference: {fileID: 4650782375296812754}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
