@@ -42,6 +42,7 @@ public class BridgeManager : MonoBehaviour
         else
         {
             StopAllCoroutines();
+            isCorrutineRuning = false;
         }
     }
 

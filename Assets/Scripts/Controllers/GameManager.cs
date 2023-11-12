@@ -51,6 +51,7 @@ public class GameManager : MonoBehaviour
             _pausePanel.SetActive(false);
             _losePanel.SetActive(false);
             isGamePaused = false;
+            _bridgeManager.canSpawn = true;
         }
         else
         {
@@ -58,6 +59,7 @@ public class GameManager : MonoBehaviour
             _pausePanel.SetActive(true);
             _losePanel.SetActive(false);
             isGamePaused = true;
+            _bridgeManager.canSpawn = false;
         }
     }
 
