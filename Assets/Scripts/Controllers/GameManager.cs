@@ -52,6 +52,7 @@ public class GameManager : MonoBehaviour
             _losePanel.SetActive(false);
             isGamePaused = false;
             _bridgeManager.canSpawn = true;
+            _watterBehaviour._canMove = true;
         }
         else
         {
@@ -60,6 +61,7 @@ public class GameManager : MonoBehaviour
             _losePanel.SetActive(false);
             isGamePaused = true;
             _bridgeManager.canSpawn = false;
+            _watterBehaviour._canMove = false;
         }
     }
 
