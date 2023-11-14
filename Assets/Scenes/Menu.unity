@@ -595,6 +595,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   loadingScreen: {fileID: 563018013}
+  manager: {fileID: 811406670}
   loadingBar: {fileID: 1988913677}
 --- !u!1 &969236632
 GameObject:

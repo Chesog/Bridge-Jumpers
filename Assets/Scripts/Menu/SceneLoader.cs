@@ -8,7 +8,7 @@ public class SceneLoader : MonoBehaviour
 {
     [SerializeField] private GameObject loadingScreen;
     [SerializeField] private Slider loadingBar;
-    
+
     public void LoadScene(int levelIndex)
     {
         StartCoroutine(LoadSceneAsynchronusly(levelIndex));

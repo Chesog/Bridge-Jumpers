@@ -21,6 +21,7 @@ public class GameManager : MonoBehaviour
         instance = this;
         _playerController.OnPlayerDead += OnPlayerDead;
         Application.targetFrameRate = (int)Screen.currentResolution.refreshRateRatio.value ;
+        DontDestroyOnLoad(this);
     }
 
     private void OnPlayerDead()
