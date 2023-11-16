@@ -1931,7 +1931,7 @@ MonoBehaviour:
   canJump: 1
   _rigidbody: {fileID: 1192991856}
   _verticalforce: {x: 0, y: 10, z: 0}
-  _horizontalforce: {x: 2, y: 0, z: 0}
+  _horizontalforce: {x: 5, y: 0, z: 0}
   _playerScore: 0
   _maxTouchY: 0.95
   _moveSpeed: 20
