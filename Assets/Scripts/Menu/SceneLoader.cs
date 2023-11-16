@@ -8,9 +8,19 @@ public class SceneLoader : MonoBehaviour
 {
     [SerializeField] private GameObject loadingScreen;
     [SerializeField] private Slider loadingBar;
+    [SerializeField] private float loadingBarDelay;
+    private IEnumerator loadScene;
 
     public void LoadScene(int levelIndex)
     {
+        loadScene = WaitForLoad(levelIndex);
+        StopCoroutine(loadScene);
+        StartCoroutine(loadScene);
+    }
+
+    private IEnumerator WaitForLoad(int levelIndex)
+    {
+        yield return new WaitForSeconds(loadingBarDelay);
         StartCoroutine(LoadSceneAsynchronusly(levelIndex));
     }
 
