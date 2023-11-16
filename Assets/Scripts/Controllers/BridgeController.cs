@@ -18,6 +18,7 @@ public class BridgeController : MonoBehaviour, IProduct
     [SerializeField] private Transform SpawnLeftPart;
     [SerializeField] private Transform SpawnRightPart;
     [SerializeField] private float Speed;
+    public bool canMove;
 
     public UnityEvent<BridgeController> OnDestroyBridge;
 
@@ -30,6 +31,12 @@ public class BridgeController : MonoBehaviour, IProduct
     }
 
     private void FixedUpdate()
+    {
+        if (canMove)
+            moveBridge();
+    }
+
+    private void moveBridge()
     {
         if (bridgeHalfL.IsColliding)
         {

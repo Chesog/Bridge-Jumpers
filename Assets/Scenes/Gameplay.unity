@@ -2172,26 +2172,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1888626623}
     m_Modifications:
-    - target: {fileID: 1007309039901767036, guid: c5c003605f6eb53458cc63efda3bf3c7, type: 3}
-      propertyPath: m_IsTrigger
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1007309039901767036, guid: c5c003605f6eb53458cc63efda3bf3c7, type: 3}
-      propertyPath: m_ProvidesContacts
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 3217458699966218365, guid: c5c003605f6eb53458cc63efda3bf3c7, type: 3}
       propertyPath: m_Name
       value: Bridge (1)
       objectReference: {fileID: 0}
-    - target: {fileID: 7183158470802979186, guid: c5c003605f6eb53458cc63efda3bf3c7, type: 3}
-      propertyPath: possibleNeighbors.Array.size
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 7183158470802979186, guid: c5c003605f6eb53458cc63efda3bf3c7, type: 3}
-      propertyPath: possibleNeighbors.Array.data[0]
-      value: 
-      objectReference: {fileID: 174881}
     - target: {fileID: 7183158470802979186, guid: c5c003605f6eb53458cc63efda3bf3c7, type: 3}
       propertyPath: possibleNeighbors.Array.data[1]
       value: 
@@ -2200,10 +2184,6 @@ PrefabInstance:
       propertyPath: possibleNeighbors.Array.data[2]
       value: 
       objectReference: {fileID: 6343501116921125854}
-    - target: {fileID: 7318916435009497446, guid: c5c003605f6eb53458cc63efda3bf3c7, type: 3}
-      propertyPath: m_IsTrigger
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 8680730005119772132, guid: c5c003605f6eb53458cc63efda3bf3c7, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
