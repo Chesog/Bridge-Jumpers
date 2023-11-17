@@ -1,6 +1,5 @@
 using GooglePlayGames;
 using GooglePlayGames.BasicApi;
-using Palmmedia.ReportGenerator.Core.Parser.Analysis;
 using UnityEngine;
 
 public class GooglePlayManager : MonoBehaviour

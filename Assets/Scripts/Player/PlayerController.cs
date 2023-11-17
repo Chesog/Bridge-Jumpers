@@ -57,6 +57,10 @@ public class PlayerController : MonoBehaviour
     {
         GameManager.Instance.SetPlayerHighScore(_playerScore);
         OnPlayerDead?.Invoke();
+        if (SystemInfo.supportsVibration)
+        {
+            Handheld.Vibrate();
+        }
         gameObject.SetActive(false);
     }
     public void RespawnPlayer() { gameObject.SetActive(true); }

@@ -867,7 +867,7 @@ CanvasGroup:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1140842849}
   m_Enabled: 1
-  m_Alpha: 0.5
+  m_Alpha: 0
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
@@ -1931,7 +1931,7 @@ MonoBehaviour:
   canJump: 1
   _rigidbody: {fileID: 1192991856}
   _verticalforce: {x: 0, y: 10, z: 0}
-  _horizontalforce: {x: 5, y: 0, z: 0}
+  _horizontalforce: {x: 3, y: 0, z: 0}
   _playerScore: 0
   _maxTouchY: 0.95
   _moveSpeed: 20
@@ -2023,6 +2023,14 @@ PrefabInstance:
     - target: {fileID: 159669637749238313, guid: 8709e09a08e08d04aac52767f36fc845, type: 3}
       propertyPath: m_Name
       value: Half Bridge R
+      objectReference: {fileID: 0}
+    - target: {fileID: 2244961992653746003, guid: 8709e09a08e08d04aac52767f36fc845, type: 3}
+      propertyPath: m_Convex
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2288017820497575449, guid: 8709e09a08e08d04aac52767f36fc845, type: 3}
+      propertyPath: m_TagString
+      value: Bridge
       objectReference: {fileID: 0}
     - target: {fileID: 6343501118559005090, guid: 8709e09a08e08d04aac52767f36fc845, type: 3}
       propertyPath: possibleNeighbors.Array.size
@@ -2216,14 +2224,38 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bridge (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 6021513481876000147, guid: c5c003605f6eb53458cc63efda3bf3c7, type: 3}
+      propertyPath: m_Convex
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6180654488336990417, guid: c5c003605f6eb53458cc63efda3bf3c7, type: 3}
+      propertyPath: isAHalfBridge
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7183158470802979186, guid: c5c003605f6eb53458cc63efda3bf3c7, type: 3}
-      propertyPath: possibleNeighbors.Array.data[1]
+      propertyPath: possibleNeighbors.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7183158470802979186, guid: c5c003605f6eb53458cc63efda3bf3c7, type: 3}
+      propertyPath: possibleNeighbors.Array.data[0]
       value: 
       objectReference: {fileID: 4650782375296812754}
     - target: {fileID: 7183158470802979186, guid: c5c003605f6eb53458cc63efda3bf3c7, type: 3}
-      propertyPath: possibleNeighbors.Array.data[2]
+      propertyPath: possibleNeighbors.Array.data[1]
       value: 
       objectReference: {fileID: 6343501116921125854}
+    - target: {fileID: 7183158470802979186, guid: c5c003605f6eb53458cc63efda3bf3c7, type: 3}
+      propertyPath: possibleNeighbors.Array.data[2]
+      value: 
+      objectReference: {fileID: 174881}
+    - target: {fileID: 7743702561372834464, guid: c5c003605f6eb53458cc63efda3bf3c7, type: 3}
+      propertyPath: m_Convex
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7863714217836726242, guid: c5c003605f6eb53458cc63efda3bf3c7, type: 3}
+      propertyPath: isAHalfBridge
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8680730005119772132, guid: c5c003605f6eb53458cc63efda3bf3c7, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -2387,6 +2419,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1888626623}
     m_Modifications:
+    - target: {fileID: 3842901157696996586, guid: d4abc09542f61e646bb6874f3f9f82d0, type: 3}
+      propertyPath: m_Convex
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6107912324515643937, guid: d4abc09542f61e646bb6874f3f9f82d0, type: 3}
       propertyPath: m_LocalPosition.x
       value: -5.68
