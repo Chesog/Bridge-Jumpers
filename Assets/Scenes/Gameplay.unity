@@ -6668,7 +6668,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _player: {fileID: 2057823383}
-  _cameraSpeed: 1.5
+  _cameraSpeed: 2
   _cameraOffset: {x: -13, y: 5}
 --- !u!1 &1011332223
 GameObject:
@@ -13604,7 +13604,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canSpawn: 1
-  _spawnTime: 2
+  _spawnTime: 1.5
   productPrefab:
   - {fileID: 174881}
   - {fileID: 4650782375296812754}
@@ -15429,6 +15429,10 @@ PrefabInstance:
       propertyPath: _bridgeManager
       value: 
       objectReference: {fileID: 1888626625}
+    - target: {fileID: 3357237336874283864, guid: 9fc83ce64174eaa47b9b1138f1fd2a77, type: 3}
+      propertyPath: minScoreToSpawn
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 3357237336874283864, guid: 9fc83ce64174eaa47b9b1138f1fd2a77, type: 3}
       propertyPath: _watterBehaviour
       value: 
