@@ -416,7 +416,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1029645911732472, guid: 58c3ff84da0e02a428df97e62d1316d0, type: 3}
       propertyPath: m_Name
-      value: Bridge_1_4
+      value: LeftPart
       objectReference: {fileID: 0}
     - target: {fileID: 1029645911732472, guid: 58c3ff84da0e02a428df97e62d1316d0, type: 3}
       propertyPath: m_TagString
@@ -572,7 +572,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 100000, guid: ed2f80e79e4b6bf4aa913c238648ab3b, type: 3}
       propertyPath: m_Name
-      value: Fence_1_5
+      value: LeftPart
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: ed2f80e79e4b6bf4aa913c238648ab3b, type: 3}
       propertyPath: m_TagString

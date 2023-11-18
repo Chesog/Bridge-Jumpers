@@ -52,7 +52,7 @@ public class WatterBehaviour : MonoBehaviour
         BridgeController temp = null;
         if (other.tag == "Bridge")
         {
-            if (other.name == "RightPart")
+            if (other.name == "RightPart" || other.name == "LeftPart")
             {
                 temp = other?.GetComponentInParent<BridgeController>();
                 temp.OnDestroyBridge.Invoke(temp); 

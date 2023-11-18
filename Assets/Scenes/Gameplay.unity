@@ -8840,7 +8840,7 @@ RectTransform:
   m_Father: {fileID: 1866061489}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMax: {x: 1, y: 0.67600006}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -10080,7 +10080,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 155500, guid: 53eb1e18130e9be4387a785b482187e1, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 155500, guid: 53eb1e18130e9be4387a785b482187e1, type: 3}
       propertyPath: m_TagString
@@ -17099,7 +17099,7 @@ PrefabInstance:
       objectReference: {fileID: 1888626625}
     - target: {fileID: 3357237336874283864, guid: 9fc83ce64174eaa47b9b1138f1fd2a77, type: 3}
       propertyPath: minScoreToSpawn
-      value: 10
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3357237336874283864, guid: 9fc83ce64174eaa47b9b1138f1fd2a77, type: 3}
       propertyPath: _watterBehaviour
