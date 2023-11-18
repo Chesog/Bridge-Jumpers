@@ -574,6 +574,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fence_1_5
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: ed2f80e79e4b6bf4aa913c238648ab3b, type: 3}
+      propertyPath: m_TagString
+      value: Bridge
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: ed2f80e79e4b6bf4aa913c238648ab3b, type: 3}
       propertyPath: m_LocalPosition.x
       value: -5.77
