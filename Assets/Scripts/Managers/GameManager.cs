@@ -20,6 +20,9 @@ public class GameManager : MonoBehaviour
     {
         instance = this;
         _playerController.OnPlayerDead += OnPlayerDead;
+        _scorePanel.SetActive(true);
+        _pausePanel.SetActive(false);
+        _losePanel.SetActive(false);
         Application.targetFrameRate = (int)Screen.currentResolution.refreshRateRatio.value ;
         DontDestroyOnLoad(this);
     }
