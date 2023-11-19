@@ -60,5 +60,8 @@ public class CharacterShop : MonoBehaviour
             else
                 _characters[i].character.SetActive(false);
         }
+        
+        characterName.text = _characters[_currentIndex].name;
+        characterPrice.text = "$ : " + _characters[_currentIndex].price;
     }
 }

@@ -228,7 +228,7 @@ MonoBehaviour:
   character: {fileID: 12851713}
   index: 9
   name: Mounted_Cheso
-  price: 0
+  price: 385
   isBought: 0
   isSelected: 0
 --- !u!1001 &19169481
@@ -491,7 +491,7 @@ MonoBehaviour:
   character: {fileID: 36615339}
   index: 7
   name: Okami
-  price: 0
+  price: 170
   isBought: 0
   isSelected: 0
 --- !u!1001 &47324641
@@ -852,7 +852,7 @@ MonoBehaviour:
   character: {fileID: 114143662}
   index: 6
   name: Mounted_Susto
-  price: 0
+  price: 115
   isBought: 0
   isSelected: 0
 --- !u!1001 &117231521
@@ -1303,7 +1303,7 @@ MonoBehaviour:
   character: {fileID: 173265117}
   index: 4
   name: Mounted_Jules
-  price: 0
+  price: 50
   isBought: 0
   isSelected: 0
 --- !u!1001 &190305013
@@ -2041,7 +2041,7 @@ MonoBehaviour:
   character: {fileID: 420884723}
   index: 5
   name: Susto
-  price: 0
+  price: 75
   isBought: 0
   isSelected: 0
 --- !u!1 &427423134
@@ -2548,7 +2548,7 @@ MonoBehaviour:
   character: {fileID: 538665040}
   index: 13
   name: Rojoin
-  price: 0
+  price: 1300
   isBought: 0
   isSelected: 0
 --- !u!1 &563018013 stripped
@@ -3585,7 +3585,7 @@ MonoBehaviour:
   character: {fileID: 787778877}
   index: 10
   name: L x 10 ^ -9
-  price: 0
+  price: 419
   isBought: 0
   isSelected: 0
 --- !u!1 &811406670
@@ -5375,7 +5375,7 @@ MonoBehaviour:
   character: {fileID: 1213683288}
   index: 1
   name: Bicupity
-  price: 0
+  price: 15
   isBought: 0
   isSelected: 0
 --- !u!1001 &1247606536
@@ -6091,7 +6091,7 @@ MonoBehaviour:
   character: {fileID: 1477353226}
   index: 0
   name: Pingu
-  price: 0
+  price: 10
   isBought: 0
   isSelected: 0
 --- !u!1001 &1500269152
@@ -6725,7 +6725,7 @@ MonoBehaviour:
   character: {fileID: 1609281131}
   index: 8
   name: Cheso
-  price: 0
+  price: 256
   isBought: 0
   isSelected: 0
 --- !u!1001 &1612393005
@@ -7493,7 +7493,7 @@ MonoBehaviour:
   character: {fileID: 1803651886}
   index: 11
   name: HighNano
-  price: 0
+  price: 576
   isBought: 0
   isSelected: 0
 --- !u!1001 &1803747398
@@ -7654,7 +7654,7 @@ MonoBehaviour:
   character: {fileID: 1810860188}
   index: 3
   name: Jules
-  price: 0
+  price: 34
   isBought: 0
   isSelected: 0
 --- !u!1001 &1817603439
@@ -8848,7 +8848,7 @@ MonoBehaviour:
   character: {fileID: 2100279341}
   index: 12
   name: Mounted_Nano
-  price: 0
+  price: 864
   isBought: 0
   isSelected: 0
 --- !u!1 &2118497608
@@ -9052,7 +9052,7 @@ MonoBehaviour:
   character: {fileID: 2143308689}
   index: 2
   name: Fran
-  price: 0
+  price: 23
   isBought: 0
   isSelected: 0
 --- !u!1001 &3077583803976165110
