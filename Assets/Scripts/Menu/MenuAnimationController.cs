@@ -9,6 +9,7 @@ public class MenuAnimationController : MonoBehaviour
     [SerializeField] private Animator gateAnimator;
     [SerializeField] private string startGameAnimationParam;
     [SerializeField] private string startGateAnimationParam;
+    [SerializeField] private string startShopAnimationParam;
     [SerializeField] private float waitTime;
     private IEnumerator openGate;
 
@@ -40,8 +41,16 @@ public class MenuAnimationController : MonoBehaviour
         StartCoroutine(openGate);
     }
 
+    public void StartShopAnimation()
+    {
+        menuCanvas.SetActive(false);
+        cameraAnimator.SetBool(startShopAnimationParam,true);
+    }
+
     public void ResetCameraAnimation()
     {
-        cameraAnimator.SetBool(startGameAnimationParam,true);
+        menuCanvas.SetActive(true);
+        cameraAnimator.SetBool(startGameAnimationParam,false);
+        cameraAnimator.SetBool(startShopAnimationParam,false);
     }
 }
