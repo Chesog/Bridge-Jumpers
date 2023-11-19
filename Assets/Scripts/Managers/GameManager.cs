@@ -8,6 +8,10 @@ public class GameManager : MonoBehaviour
     [SerializeField] private BridgeManager _bridgeManager;
     [SerializeField] private WatterBehaviour _watterBehaviour;
     [SerializeField] private TextMeshProUGUI _scoreDisplay;
+    [SerializeField] private TextMeshProUGUI _scoreDisplayLose;
+    [SerializeField] private TextMeshProUGUI _scoreDisplayPause;
+    [SerializeField] private TextMeshProUGUI _HighscoreDisplayLose;
+    [SerializeField] private TextMeshProUGUI _HighscoreDisplayPause;
     [SerializeField] private GameObject _spikes;
     [SerializeField] private GameObject _scorePanel;
     [SerializeField] private GameObject _pausePanel;
@@ -19,6 +23,9 @@ public class GameManager : MonoBehaviour
     private void Awake()
     {
         instance = this;
+        if (_playerController == null)
+            _playerController = FindObjectOfType<PlayerController>();
+        
         _playerController.OnPlayerDead += OnPlayerDead;
         _scorePanel.SetActive(true);
         _pausePanel.SetActive(false);
@@ -34,6 +41,8 @@ public class GameManager : MonoBehaviour
         _scorePanel.SetActive(false);
         _pausePanel.SetActive(false);
         _losePanel.SetActive(true);
+        _scoreDisplayLose.text = "Player Score :" + _playerController.GetPlayerScore();
+        _HighscoreDisplayLose.text = "High Score : " + playerHighScore;
     }
 
     public static GameManager Instance
@@ -57,6 +66,8 @@ public class GameManager : MonoBehaviour
             isGamePaused = false;
             _bridgeManager.canSpawn = true;
             _watterBehaviour._canMove = true;
+            _scoreDisplayPause.text = "Player Score :" + _playerController.GetPlayerScore();;
+            _HighscoreDisplayPause.text = "High Score : " + playerHighScore;
         }
         else
         {
