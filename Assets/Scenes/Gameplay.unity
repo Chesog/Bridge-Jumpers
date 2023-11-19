@@ -6016,9 +6016,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1866061489}
     m_Modifications:
+    - target: {fileID: 714970868462255994, guid: f5ea4f48c0ce0cc4a8163a83ff83bf92, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2390603935822904834, guid: f5ea4f48c0ce0cc4a8163a83ff83bf92, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3806891106820838127, guid: f5ea4f48c0ce0cc4a8163a83ff83bf92, type: 3}
       propertyPath: m_Name
       value: Loading Panel
+      objectReference: {fileID: 0}
+    - target: {fileID: 3806891106820838127, guid: f5ea4f48c0ce0cc4a8163a83ff83bf92, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8722850083722110239, guid: f5ea4f48c0ce0cc4a8163a83ff83bf92, type: 3}
       propertyPath: m_Pivot.x
@@ -15301,6 +15313,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: GamePanel
       objectReference: {fileID: 0}
+    - target: {fileID: 8905648650826467301, guid: ef6b21639b628a04aa4baaa9245143c8, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -15507,6 +15523,10 @@ PrefabInstance:
     - target: {fileID: 8286324949711155332, guid: ddc597acf8b18a54ca6650128e19c07c, type: 3}
       propertyPath: m_Name
       value: PausePanel
+      objectReference: {fileID: 0}
+    - target: {fileID: 8286324949711155332, guid: ddc597acf8b18a54ca6650128e19c07c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8746790995060313108, guid: ddc597acf8b18a54ca6650128e19c07c, type: 3}
       propertyPath: m_Pivot.x
