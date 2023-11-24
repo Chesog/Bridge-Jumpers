@@ -16,18 +16,17 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private int _playerScore;
     [SerializeField] private float _maxTouchY;
     [SerializeField] private float _moveSpeed;
-    public Character[] playerUnlockCharacters;
 
-    
-    private void OnEnable()
+ 
+   
+    private void Start()
     {
         if (_rigidbody == null)
             _rigidbody = GetComponentInChildren<Rigidbody>();
         ResetPlayerScore();
         RespawnPlayer();
-        _visuals.SetActive(true);
     }
-
+    
     private void FixedUpdate()
     {
         if (InputManager.Instance.GetAxis("Vertical") > _maxTouchY)
@@ -53,19 +52,6 @@ public class PlayerController : MonoBehaviour
     public void AddPlayerScore(int value) { _playerScore += value; }
     public int GetPlayerScore() { return _playerScore; }
     public void ResetPlayerScore() { _playerScore = 0; }
-
-    public void SetPlayerCharacter(Character[] playerUnlockCharacters)
-    {
-        this.playerUnlockCharacters = playerUnlockCharacters;
-        int lenght = this.playerUnlockCharacters.Length;
-        for (int i = 0; i < lenght; i++)
-        {
-            if (this.playerUnlockCharacters[i].isSelected)
-                playerUnlockCharacters[i].gameObject.SetActive(true);
-            else
-                playerUnlockCharacters[i].gameObject.SetActive(false);
-        }
-    }
 
     public void DestroyPlayer()
     {
