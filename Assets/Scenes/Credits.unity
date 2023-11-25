@@ -6007,6 +6007,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: TT_Swordman
       objectReference: {fileID: 0}
+    - target: {fileID: 4398315806565082841, guid: f073d548c8995db4dab7f06f1bd0e0bf, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8698628098898539236, guid: f073d548c8995db4dab7f06f1bd0e0bf, type: 3}
       propertyPath: m_LocalPosition.x
       value: 4.4

@@ -9927,7 +9927,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &408984
 Transform:
   m_ObjectHideFlags: 0
@@ -10079,8 +10079,8 @@ MonoBehaviour:
   index: 0
   name: Peasant
   price: 0
-  isBought: 0
-  isSelected: 1
+  isBought: 1
+  isSelected: 0
 --- !u!1 &156840
 GameObject:
   m_ObjectHideFlags: 0
@@ -16235,7 +16235,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: dccf8e44ede71db42b49378af93c5fb7, type: 2}
+  - {fileID: 2100000, guid: da1774cf1ebfffc4fb7671900ec15195, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
