@@ -25,6 +25,11 @@ public class CharacterShop : MonoBehaviour
                 _characters[i].character.SetActive(true);
             else
                 _characters[i].character.SetActive(false);
+
+            if (PlayerPrefs.GetInt(_characters[i].name) == 1)
+                _characters[i].isBought = true;
+            else
+                _characters[i].isBought = false;
         }
         characterName.text = _characters[_currentIndex].name;
         characterPrice.text = "$ : " + _characters[_currentIndex].price;
@@ -121,6 +126,7 @@ public class CharacterShop : MonoBehaviour
         {
             _characters[_currentIndex].isBought = true;
             _playerMoney -= (int)_characters[_currentIndex].price;
+            PlayerPrefs.SetInt(_characters[_currentIndex].name,1);
             PlayerPrefs.SetInt("PlayerMoney",_playerMoney);
             PlayerPrefs.Save();
             playerMoneyText.text = _playerMoney.ToString();
@@ -137,7 +143,7 @@ public class CharacterShop : MonoBehaviour
             if (i == _currentIndex && _characters[_currentIndex].isBought)
             {
                 _characters[_currentIndex].isSelected = true;
-                PlayerPrefs.SetInt("PlayerCharacter",_currentIndex + 1);
+                PlayerPrefs.SetInt("PlayerCharacter",_currentIndex);
                 _buyButtons[1].GetComponentInChildren<TextMeshProUGUI>().SetText("Selected");
             }
             else
