@@ -308,7 +308,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &23072928
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6668,6 +6668,7 @@ MonoBehaviour:
   - {fileID: 538665041}
   characterName: {fileID: 1714246450}
   characterPrice: {fileID: 2061017372}
+  playerMoneyText: {fileID: 720021456}
   _buyButtons: []
   _playerMoney: 0
 --- !u!1 &1421991093

@@ -10,6 +10,7 @@ public class CharacterShop : MonoBehaviour
     [SerializeField] private Character[] _characters;
     [SerializeField] private TextMeshProUGUI characterName;
     [SerializeField] private TextMeshProUGUI characterPrice;
+    [SerializeField] private TextMeshProUGUI playerMoneyText;
     [SerializeField] private GameObject[] _buyButtons;
     [SerializeField] private int _playerMoney;
     private int _currentIndex;
@@ -29,6 +30,7 @@ public class CharacterShop : MonoBehaviour
         characterPrice.text = "$ : " + _characters[_currentIndex].price;
         
         _playerMoney = PlayerPrefs.GetInt("PlayerMoney");
+        playerMoneyText.text = _playerMoney.ToString();
     }
 
     public void nextCharacter()
@@ -77,6 +79,7 @@ public class CharacterShop : MonoBehaviour
             _playerMoney -= (int)_characters[_currentIndex].price;
             PlayerPrefs.SetInt("PlayerMoney",_playerMoney);
             PlayerPrefs.Save();
+            playerMoneyText.text = _playerMoney.ToString();
         }
     }
 

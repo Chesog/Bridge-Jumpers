@@ -20,7 +20,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] private int minScoreToSpawn;
     private bool isGamePaused;
     private static GameManager instance;
-    private void Awake()
+
+    private void OnEnable()
     {
         instance = this;
         if (_playerController == null)
@@ -32,6 +33,7 @@ public class GameManager : MonoBehaviour
         _losePanel.SetActive(false);
         Application.targetFrameRate = (int)Screen.currentResolution.refreshRateRatio.value ;
         DontDestroyOnLoad(this);
+        playerHighScore = PlayerPrefs.GetInt("PlayerHighScore");
     }
 
     private void OnPlayerDead()
@@ -98,6 +100,8 @@ public class GameManager : MonoBehaviour
     {
         if (value > playerHighScore)
             playerHighScore = value;
+        PlayerPrefs.SetInt("PlayerHighScore",playerHighScore);
+        PlayerPrefs.Save();
     }
 
     private void OnDestroy()
