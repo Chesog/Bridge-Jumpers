@@ -5,6 +5,7 @@ public class ButtonsController : MonoBehaviour
 {
     [SerializeField] private GameObject MenuPanel;
     [SerializeField] private GameObject OptionsPanel;
+    [SerializeField] private GameObject pluginPanel;
     public void ToggleOptions()
     {
         if (OptionsPanel.activeInHierarchy)
@@ -15,6 +16,20 @@ public class ButtonsController : MonoBehaviour
         else
         {
             OptionsPanel.SetActive(true);
+            MenuPanel.SetActive(false);
+        }
+    }
+
+    public void TogglePlugin()
+    {
+        if (pluginPanel.activeInHierarchy)
+        {
+            pluginPanel.SetActive(false);
+            MenuPanel.SetActive(true);
+        }
+        else
+        {
+            pluginPanel.SetActive(true);
             MenuPanel.SetActive(false);
         }
     }
