@@ -88,8 +88,9 @@ public class BridgeManager : MonoBehaviour
             spawnFirstBridge = false;
             return _factory.CreatePool(Vector3.zero, productPrefab[bridgeToSpawn]);
         }
-        
-        bridgeToSpawn = Random.Range(0, _currentBridge.GetPossibleNeighbors().Length);
+
+        int maxValue = _currentBridge.GetPossibleNeighbors().Length - 1;
+        bridgeToSpawn = Random.Range(0,maxValue);
         
         return _factory.CreatePool(Vector3.zero, _currentBridge.GetPossibleNeighbors()[bridgeToSpawn]);
     }

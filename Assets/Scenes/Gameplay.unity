@@ -13075,7 +13075,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canSpawn: 1
-  _spawnTime: 1.5
+  _spawnTime: 0.2
   productPrefab:
   - {fileID: 174881}
   - {fileID: 853556905740113429}
