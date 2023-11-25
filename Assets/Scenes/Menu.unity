@@ -6668,6 +6668,8 @@ MonoBehaviour:
   - {fileID: 538665041}
   characterName: {fileID: 1714246450}
   characterPrice: {fileID: 2061017372}
+  _buyButtons: []
+  _playerMoney: 0
 --- !u!1 &1421991093
 GameObject:
   m_ObjectHideFlags: 0

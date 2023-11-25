@@ -14,6 +14,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Vector3 _verticalforce;
     [SerializeField] private Vector3 _horizontalforce;
     [SerializeField] private int _playerScore;
+    [SerializeField] private int _playerMoney;
     [SerializeField] private float _maxTouchY;
     [SerializeField] private float _moveSpeed;
 
@@ -25,6 +26,7 @@ public class PlayerController : MonoBehaviour
             _rigidbody = GetComponentInChildren<Rigidbody>();
         ResetPlayerScore();
         RespawnPlayer();
+        _playerMoney = PlayerPrefs.GetInt("PlayerMoney");
     }
     
     private void FixedUpdate()
@@ -50,7 +52,15 @@ public class PlayerController : MonoBehaviour
     }
 
     public void AddPlayerScore(int value) { _playerScore += value; }
+
+    public void AddPlayerMoney(int value)
+    {
+        _playerMoney += value;
+        PlayerPrefs.SetInt("PlayerMoney",_playerMoney);
+        PlayerPrefs.Save();
+    }
     public int GetPlayerScore() { return _playerScore; }
+    public int GetPlayerMoney() { return _playerMoney; }
     public void ResetPlayerScore() { _playerScore = 0; }
 
     public void DestroyPlayer()

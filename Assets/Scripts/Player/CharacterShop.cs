@@ -10,6 +10,8 @@ public class CharacterShop : MonoBehaviour
     [SerializeField] private Character[] _characters;
     [SerializeField] private TextMeshProUGUI characterName;
     [SerializeField] private TextMeshProUGUI characterPrice;
+    [SerializeField] private GameObject[] _buyButtons;
+    [SerializeField] private int _playerMoney;
     private int _currentIndex;
 
     private void OnEnable()
@@ -25,6 +27,8 @@ public class CharacterShop : MonoBehaviour
         }
         characterName.text = _characters[_currentIndex].name;
         characterPrice.text = "$ : " + _characters[_currentIndex].price;
+        
+        _playerMoney = PlayerPrefs.GetInt("PlayerMoney");
     }
 
     public void nextCharacter()
@@ -63,5 +67,28 @@ public class CharacterShop : MonoBehaviour
         
         characterName.text = _characters[_currentIndex].name;
         characterPrice.text = "$ : " + _characters[_currentIndex].price;
+    }
+
+    public void BuyCharacter()
+    {
+        if (_playerMoney >= _characters[_currentIndex].price)
+        {
+            _characters[_currentIndex].isBought = true;
+            _playerMoney -= (int)_characters[_currentIndex].price;
+            PlayerPrefs.SetInt("PlayerMoney",_playerMoney);
+            PlayerPrefs.Save();
+        }
+    }
+
+    public void SelecCharacter()
+    {
+        int lenght = _characters.Length;
+        for (int i = 0; i < lenght; i++)
+        {
+            if (i == _currentIndex && _characters[_currentIndex].isBought)
+                _characters[_currentIndex].isSelected = true;
+            else
+                _characters[_currentIndex].isSelected = false;
+        }
     }
 }

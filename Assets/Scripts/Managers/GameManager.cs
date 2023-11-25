@@ -88,6 +88,11 @@ public class GameManager : MonoBehaviour
         if (_playerController.GetPlayerScore() >= minScoreToSpawn)
             _spikes.SetActive(true);
     }
+    
+    public void AddCoins(int value)
+    {
+        _playerController.AddPlayerMoney(value);
+    }
 
     public void SetPlayerHighScore(int value)
     {
