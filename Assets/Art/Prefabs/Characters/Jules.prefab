@@ -14844,6 +14844,7 @@ GameObject:
   - component: {fileID: 2885116782524837830}
   - component: {fileID: 3845694079041792644}
   - component: {fileID: 6847320247031370309}
+  - component: {fileID: 2654031176147586057}
   m_Layer: 0
   m_Name: Jules
   m_TagString: Player
@@ -14859,7 +14860,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7293287599626463579}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -14966,7 +14967,7 @@ CapsuleCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Radius: 0.5
   m_Height: 1.54
@@ -14986,6 +14987,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _animator: {fileID: 2885116782524837830}
   animatorParam: Movement
+--- !u!114 &2654031176147586057
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7293287599626463579}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 033f3037580f7cb458b47eae3c3601d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  character: {fileID: 7293287599626463579}
+  index: 4
+  name: Jules
+  price: 34
+  isBought: 0
+  isSelected: 0
 --- !u!1 &7335760149580196976
 GameObject:
   m_ObjectHideFlags: 0

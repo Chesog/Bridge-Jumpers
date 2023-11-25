@@ -20,18 +20,19 @@ public class GameManager : MonoBehaviour
     [SerializeField] private int minScoreToSpawn;
     private bool isGamePaused;
     private static GameManager instance;
+    private int _selectedCharacter;
 
     private void OnEnable()
     {
         instance = this;
         if (_playerController == null)
             _playerController = FindObjectOfType<PlayerController>();
-        
+
         _playerController.OnPlayerDead += OnPlayerDead;
         _scorePanel.SetActive(true);
         _pausePanel.SetActive(false);
         _losePanel.SetActive(false);
-        Application.targetFrameRate = (int)Screen.currentResolution.refreshRateRatio.value ;
+        Application.targetFrameRate = (int)Screen.currentResolution.refreshRateRatio.value;
         DontDestroyOnLoad(this);
         playerHighScore = PlayerPrefs.GetInt("PlayerHighScore");
     }
@@ -68,7 +69,7 @@ public class GameManager : MonoBehaviour
             isGamePaused = false;
             _bridgeManager.canSpawn = true;
             _watterBehaviour._canMove = true;
-            _scoreDisplayPause.text = "Player Score :" + _playerController.GetPlayerScore();;
+            _scoreDisplayPause.text = "Player Score :" + _playerController.GetPlayerScore();
             _HighscoreDisplayPause.text = "High Score : " + playerHighScore;
         }
         else
@@ -90,7 +91,7 @@ public class GameManager : MonoBehaviour
         if (_playerController.GetPlayerScore() >= minScoreToSpawn)
             _spikes.SetActive(true);
     }
-    
+
     public void AddCoins(int value)
     {
         _playerController.AddPlayerMoney(value);
@@ -100,12 +101,13 @@ public class GameManager : MonoBehaviour
     {
         if (value > playerHighScore)
             playerHighScore = value;
-        PlayerPrefs.SetInt("PlayerHighScore",playerHighScore);
+        PlayerPrefs.SetInt("PlayerHighScore", playerHighScore);
         PlayerPrefs.Save();
     }
 
     private void OnDestroy()
     {
-        _playerController.OnPlayerDead -= OnPlayerDead;
+        if (_playerController != null)
+            _playerController.OnPlayerDead -= OnPlayerDead;
     }
 }

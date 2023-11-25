@@ -11877,6 +11877,7 @@ GameObject:
   - component: {fileID: 6589784447787609162}
   - component: {fileID: 7300947967141872252}
   - component: {fileID: 4530129311991046006}
+  - component: {fileID: 8872595673804098742}
   m_Layer: 0
   m_Name: Okami
   m_TagString: Player
@@ -11999,7 +12000,7 @@ CapsuleCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Radius: 0.5
   m_Height: 1.54
@@ -12019,6 +12020,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _animator: {fileID: 6589784447787609162}
   animatorParam: Movement
+--- !u!114 &8872595673804098742
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5512373176902953837}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 033f3037580f7cb458b47eae3c3601d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  character: {fileID: 5512373176902953837}
+  index: 8
+  name: Okami
+  price: 170
+  isBought: 0
+  isSelected: 0
 --- !u!1 &5550416293156727403
 GameObject:
   m_ObjectHideFlags: 0

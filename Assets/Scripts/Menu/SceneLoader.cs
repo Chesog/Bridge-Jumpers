@@ -10,6 +10,7 @@ public class SceneLoader : MonoBehaviour
     [SerializeField] private Slider loadingBar;
     [SerializeField] private float loadingBarDelay;
     private IEnumerator loadScene;
+    
 
     public void LoadScene(int levelIndex)
     {

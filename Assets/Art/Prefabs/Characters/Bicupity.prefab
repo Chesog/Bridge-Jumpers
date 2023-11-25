@@ -19103,6 +19103,7 @@ GameObject:
   - component: {fileID: 4422034970962251734}
   - component: {fileID: 3015287644342411316}
   - component: {fileID: 4971636959093578703}
+  - component: {fileID: 2101047216536713221}
   m_Layer: 0
   m_Name: Bicupity
   m_TagString: Player
@@ -19118,7 +19119,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9140348592226595084}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -19245,6 +19246,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _animator: {fileID: 4422034970962251734}
   animatorParam: Movement
+--- !u!114 &2101047216536713221
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9140348592226595084}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 033f3037580f7cb458b47eae3c3601d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  character: {fileID: 9140348592226595084}
+  index: 3
+  name: Bicupity
+  price: 28
+  isBought: 0
+  isSelected: 0
 --- !u!1 &9194344335060024626
 GameObject:
   m_ObjectHideFlags: 0

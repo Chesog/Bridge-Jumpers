@@ -17313,6 +17313,7 @@ GameObject:
   - component: {fileID: 8498999921647538350}
   - component: {fileID: 6541413497457715463}
   - component: {fileID: 7341416389031106045}
+  - component: {fileID: 283189744475890602}
   m_Layer: 0
   m_Name: Fran
   m_TagString: Untagged
@@ -17328,9 +17329,9 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7433339633288736344}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
   m_LocalPosition: {x: 0, y: -0.7, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.6233635, y: 0.6233635, z: 0.6233635}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8580385231365903370}
@@ -17443,7 +17444,7 @@ CapsuleCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Radius: 0.5
   m_Height: 1.54
@@ -17463,6 +17464,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _animator: {fileID: 8498999921647538350}
   animatorParam: Movement
+--- !u!114 &283189744475890602
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7433339633288736344}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 033f3037580f7cb458b47eae3c3601d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  character: {fileID: 7433339633288736344}
+  index: 2
+  name: Fran
+  price: 15
+  isBought: 0
+  isSelected: 0
 --- !u!1 &7455461695050705186
 GameObject:
   m_ObjectHideFlags: 0

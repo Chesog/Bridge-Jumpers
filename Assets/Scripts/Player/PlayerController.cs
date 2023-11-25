@@ -13,22 +13,35 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Rigidbody _rigidbody;
     [SerializeField] private Vector3 _verticalforce;
     [SerializeField] private Vector3 _horizontalforce;
+    [SerializeField] private GameObject[] _characters;
+    [SerializeField] private int _selectedCharacter;
     [SerializeField] private int _playerScore;
     [SerializeField] private int _playerMoney;
     [SerializeField] private float _maxTouchY;
     [SerializeField] private float _moveSpeed;
+    
 
- 
-   
-    private void Start()
+    private void OnEnable()
     {
         if (_rigidbody == null)
             _rigidbody = GetComponentInChildren<Rigidbody>();
         ResetPlayerScore();
         RespawnPlayer();
         _playerMoney = PlayerPrefs.GetInt("PlayerMoney");
+        _selectedCharacter = PlayerPrefs.GetInt("PlayerCharacter");
+        Debug.Log("Selected Char " + _selectedCharacter);
+        PlayerPrefs.Save();
+        int lenght = _characters.Length;
+        
+        for (int i = 0; i < lenght; i++)
+        {
+            if (i == _selectedCharacter)
+                _characters[i].gameObject.SetActive(true);
+            else
+                _characters[i].gameObject.SetActive(false);
+        }
     }
-    
+
     private void FixedUpdate()
     {
         if (InputManager.Instance.GetAxis("Vertical") > _maxTouchY)

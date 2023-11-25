@@ -16226,6 +16226,7 @@ GameObject:
   - component: {fileID: 7736192724512857029}
   - component: {fileID: 184721802818814655}
   - component: {fileID: 4021619081043054320}
+  - component: {fileID: 2134793098874019759}
   m_Layer: 0
   m_Name: Mounted_Nano
   m_TagString: Player
@@ -16241,9 +16242,9 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7158574342663126296}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.6233635, y: 0.6233635, z: 0.6233635}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1651338428542861614}
@@ -16356,7 +16357,7 @@ CapsuleCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Radius: 0.5
   m_Height: 1.54
@@ -16376,6 +16377,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _animator: {fileID: 7736192724512857029}
   animatorParam: Movement
+--- !u!114 &2134793098874019759
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7158574342663126296}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 033f3037580f7cb458b47eae3c3601d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  character: {fileID: 7158574342663126296}
+  index: 13
+  name: Mounted_Nano
+  price: 864
+  isBought: 0
+  isSelected: 0
 --- !u!1 &7187515383633812012
 GameObject:
   m_ObjectHideFlags: 0
