@@ -9,15 +9,17 @@ public class PlayerController : MonoBehaviour
     public GameObject _visuals;
     public bool canJump;
     public UnityAction OnPlayerDead;
-    
+    [SerializeField] public FloatingJoystick variableJoystick;
     [SerializeField] private Rigidbody _rigidbody;
     [SerializeField] private Vector3 _verticalforce;
+    [SerializeField] private Vector3 _verticalforceDown;
     [SerializeField] private Vector3 _horizontalforce;
     [SerializeField] private GameObject[] _characters;
     [SerializeField] private int _selectedCharacter;
     [SerializeField] private int _playerScore;
     [SerializeField] private int _playerMoney;
     [SerializeField] private float _maxTouchY;
+    [SerializeField] private float _minTouchY;
     [SerializeField] private float _moveSpeed;
     
 
@@ -44,7 +46,7 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (InputManager.Instance.GetAxis("Vertical") > _maxTouchY)
+        if (variableJoystick.Vertical > _maxTouchY)
         {
             if (isGrounded())
             {
@@ -52,16 +54,14 @@ public class PlayerController : MonoBehaviour
                 _rigidbody.AddForce(_verticalforce, ForceMode.Impulse);
             }
         }
-        
-        _horizontalforce.x = InputManager.Instance.GetAxis("Horizontal") * _moveSpeed;
-        _rigidbody.AddForce(_horizontalforce, ForceMode.Force);
-        
-        if (Input.GetKeyDown(KeyCode.Space))
+
+        if (variableJoystick.Vertical < _minTouchY)
         {
-            _rigidbody.AddForce(_verticalforce, ForceMode.Impulse);
-            transform.position = transform.position += _verticalforce;
-            Debug.Log("Presed Space");
+            _rigidbody.AddForce(_verticalforceDown, ForceMode.Impulse);
         }
+
+        _horizontalforce.x = variableJoystick.Horizontal * _moveSpeed;
+        _rigidbody.AddForce(_horizontalforce, ForceMode.Force);
     }
 
     public void AddPlayerScore(int value) { _playerScore += value; }

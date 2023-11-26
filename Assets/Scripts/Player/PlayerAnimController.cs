@@ -6,6 +6,7 @@ using UnityEngine;
 public class PlayerAnimController : MonoBehaviour
 {
     [SerializeField] private Animator _animator;
+    [SerializeField] public FloatingJoystick variableJoystick;
     [SerializeField] private string animatorParam;
 
     private void OnEnable()
@@ -17,8 +18,8 @@ public class PlayerAnimController : MonoBehaviour
     private void Update()
     {
         Vector3 temp = Vector3.zero;
-        temp.x = InputManager.Instance.GetAxis("Horizontal");
-        temp.y = InputManager.Instance.GetAxis("Vertical");
+        temp.x = variableJoystick.Horizontal;
+        temp.y = variableJoystick.Vertical;
         _animator.SetFloat(animatorParam,temp.magnitude - temp.z);
     }
 }

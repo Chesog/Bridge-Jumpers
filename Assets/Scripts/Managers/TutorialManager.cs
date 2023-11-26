@@ -18,6 +18,7 @@ public class TutorialManager : MonoBehaviour
         if (PlayerPrefs.GetInt("RunTutorial") == 1)
         {
             _tutorialPanel.SetActive(true);
+            FirstStep();
         }
         else
         {
@@ -29,7 +30,7 @@ public class TutorialManager : MonoBehaviour
 
     public void FirstStep()
     {
-        _tutorialLabel.text = "Slide UP To Jump";
+        _tutorialLabel.text = "Slide UP To Jump or Down to Quick Fall";
         _tutoriaAnimator.SetBool("Click",true);
         _firstStep.SetActive(true);
         _secondStep.SetActive(false);
