@@ -54,8 +54,7 @@ public class PlayerController : MonoBehaviour
             {
                 _rigidbody.velocity = Vector3.zero;
                 _rigidbody.AddForce(_verticalforce, ForceMode.Impulse);
-                if (!SoundManager.Instance.GetMusicSource().isPlaying)
-                    SoundManager.Instance.PlaySound(jumpSound);
+                SoundManager.Instance.PlaySound(jumpSound);
             }
         }
 
