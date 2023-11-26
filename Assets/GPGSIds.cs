@@ -24,7 +24,11 @@
 
 public static class GPGSIds
 {
+        public const string achievement_the_mad_king = "CgkI3Ji-p9sLEAIQAg"; // <GPGSID>
+        public const string achievement_unite_the_kingdom = "CgkI3Ji-p9sLEAIQBA"; // <GPGSID>
+        public const string achievement_let_the_magic_begin = "CgkI3Ji-p9sLEAIQAw"; // <GPGSID>
         public const string achievement_first_time_jumper = "CgkI3Ji-p9sLEAIQAQ"; // <GPGSID>
+        public const string achievement_axe_to_meet_you = "CgkI3Ji-p9sLEAIQBQ"; // <GPGSID>
 
 }
 

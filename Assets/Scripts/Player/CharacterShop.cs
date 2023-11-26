@@ -128,7 +128,45 @@ public class CharacterShop : MonoBehaviour
             playerMoneyText.text = _playerMoney.ToString();
             _buyButtons[0].SetActive(false);
             _buyButtons[1].SetActive(true);
+
+            switch (_currentIndex)
+            {
+                case 0:
+                    break;
+                case 1:
+                case 2:
+                case 6:
+                case 7:
+                case 8:
+                    PlayGamesArchivements.Instance.AxeToMeetYou();
+                    break;
+                case 9:
+                case 10:
+                    PlayGamesArchivements.Instance.TheMadKing();
+                    break;
+                case 3:
+                    break;
+                case 4:
+                case 5:
+                case 11:
+                case 12:
+                case 13:
+                case 14:
+                    PlayGamesArchivements.Instance.LetTheMagicBegin();
+                    break;
+            }
         }
+
+        int lenght = _characters.Length;
+        int charactersBuyed = 0;
+        for (int i = 0; i < lenght; i++)
+        {
+            if (_characters[i].isBought)
+                charactersBuyed++;
+        }
+        
+        if (charactersBuyed == lenght -1)
+            PlayGamesArchivements.Instance.UniteTheKingdom();
     }
 
     public void SelecCharacter()

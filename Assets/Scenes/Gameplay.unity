@@ -9784,7 +9784,7 @@ MonoBehaviour:
   _canMove: 0
   _isCorrutineRuning: 0
   _rigidbody: {fileID: 526595328}
-  _moveTime: 1.5
+  _moveTime: 2.5
   _force: {x: 0, y: 5, z: 0}
 --- !u!54 &526595328
 Rigidbody:
