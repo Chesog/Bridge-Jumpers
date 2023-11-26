@@ -33318,7 +33318,7 @@ GameObject:
   m_TagString: Bridge
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!65 &1940696326
 BoxCollider:
@@ -37391,6 +37391,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1888626623}
     m_Modifications:
+    - target: {fileID: 73380909832202853, guid: 0d6ad648c4e35aa43afdc67c52ba535f, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1253358450670481013, guid: 0d6ad648c4e35aa43afdc67c52ba535f, type: 3}
       propertyPath: possibleNeighbors.Array.size
       value: 6
@@ -37419,9 +37423,45 @@ PrefabInstance:
       propertyPath: possibleNeighbors.Array.data[5]
       value: 
       objectReference: {fileID: 6236970601260487267}
+    - target: {fileID: 1497229659997566049, guid: 0d6ad648c4e35aa43afdc67c52ba535f, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1497229659997566051, guid: 0d6ad648c4e35aa43afdc67c52ba535f, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3723380392100389887, guid: 0d6ad648c4e35aa43afdc67c52ba535f, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4519148695269954864, guid: 0d6ad648c4e35aa43afdc67c52ba535f, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5609413027135089592, guid: 0d6ad648c4e35aa43afdc67c52ba535f, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5816926980053841532, guid: 0d6ad648c4e35aa43afdc67c52ba535f, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6637401868195014574, guid: 0d6ad648c4e35aa43afdc67c52ba535f, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6669062864997070242, guid: 0d6ad648c4e35aa43afdc67c52ba535f, type: 3}
       propertyPath: m_Name
       value: Half Bridge R C2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6669062864997070242, guid: 0d6ad648c4e35aa43afdc67c52ba535f, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6710261775767827949, guid: 0d6ad648c4e35aa43afdc67c52ba535f, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8429806233203346586, guid: 0d6ad648c4e35aa43afdc67c52ba535f, type: 3}
       propertyPath: m_LocalPosition.x
@@ -37463,6 +37503,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8488478532449581011, guid: 0d6ad648c4e35aa43afdc67c52ba535f, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8956237673036324658, guid: 0d6ad648c4e35aa43afdc67c52ba535f, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -37496,6 +37544,46 @@ PrefabInstance:
       propertyPath: m_Name
       value: Half Bridge R
       objectReference: {fileID: 0}
+    - target: {fileID: 159669637749238313, guid: 8709e09a08e08d04aac52767f36fc845, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2102057220360910971, guid: 8709e09a08e08d04aac52767f36fc845, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2277097745014802971, guid: 8709e09a08e08d04aac52767f36fc845, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2288017820497575449, guid: 8709e09a08e08d04aac52767f36fc845, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2396111147865979725, guid: 8709e09a08e08d04aac52767f36fc845, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2396111147865979727, guid: 8709e09a08e08d04aac52767f36fc845, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2702084408803644894, guid: 8709e09a08e08d04aac52767f36fc845, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4690197018590591268, guid: 8709e09a08e08d04aac52767f36fc845, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5926947723553489410, guid: 8709e09a08e08d04aac52767f36fc845, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5969129839317230776, guid: 8709e09a08e08d04aac52767f36fc845, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6343501118559005090, guid: 8709e09a08e08d04aac52767f36fc845, type: 3}
       propertyPath: possibleNeighbors.Array.size
       value: 6
@@ -37524,6 +37612,10 @@ PrefabInstance:
       propertyPath: possibleNeighbors.Array.data[5]
       value: 
       objectReference: {fileID: 6236970601260487267}
+    - target: {fileID: 6688070754802898455, guid: 8709e09a08e08d04aac52767f36fc845, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7578292761146837208, guid: 8709e09a08e08d04aac52767f36fc845, type: 3}
       propertyPath: m_LocalPosition.x
       value: 4.79
@@ -37581,6 +37673,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bridge C
       objectReference: {fileID: 0}
+    - target: {fileID: 432067439586815927, guid: 048bcf34bc6a4874bb66ea2688e015a7, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2451385121999976077, guid: 048bcf34bc6a4874bb66ea2688e015a7, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3129268214575261506, guid: 048bcf34bc6a4874bb66ea2688e015a7, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3156816192205456998, guid: 048bcf34bc6a4874bb66ea2688e015a7, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3632443869476943734, guid: 048bcf34bc6a4874bb66ea2688e015a7, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4366923784877282872, guid: 048bcf34bc6a4874bb66ea2688e015a7, type: 3}
       propertyPath: possibleNeighbors.Array.size
       value: 6
@@ -37609,6 +37721,10 @@ PrefabInstance:
       propertyPath: possibleNeighbors.Array.data[5]
       value: 
       objectReference: {fileID: 6236970601260487267}
+    - target: {fileID: 4876555925982862576, guid: 048bcf34bc6a4874bb66ea2688e015a7, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5156151631993168452, guid: 048bcf34bc6a4874bb66ea2688e015a7, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -37647,6 +37763,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5156151631993168452, guid: 048bcf34bc6a4874bb66ea2688e015a7, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5325273308155751479, guid: 048bcf34bc6a4874bb66ea2688e015a7, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8636120028822504540, guid: 048bcf34bc6a4874bb66ea2688e015a7, type: 3}
+      propertyPath: m_StaticEditorFlags
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -38021,6 +38145,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1888626623}
     m_Modifications:
+    - target: {fileID: 3148179691349553922, guid: a0d5773c559ff0d4896a1b13ecd4753b, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4490393478358526779, guid: a0d5773c559ff0d4896a1b13ecd4753b, type: 3}
       propertyPath: possibleNeighbors.Array.size
       value: 6
@@ -38049,9 +38177,25 @@ PrefabInstance:
       propertyPath: possibleNeighbors.Array.data[5]
       value: 
       objectReference: {fileID: 6236970601260487267}
+    - target: {fileID: 4582611379538511446, guid: a0d5773c559ff0d4896a1b13ecd4753b, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5064588452609647426, guid: a0d5773c559ff0d4896a1b13ecd4753b, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5878925577683329848, guid: a0d5773c559ff0d4896a1b13ecd4753b, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7171611881953421165, guid: a0d5773c559ff0d4896a1b13ecd4753b, type: 3}
       propertyPath: m_Name
       value: Bridge C2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7171611881953421165, guid: a0d5773c559ff0d4896a1b13ecd4753b, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7233093178721130929, guid: a0d5773c559ff0d4896a1b13ecd4753b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -38091,6 +38235,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7233093178721130929, guid: a0d5773c559ff0d4896a1b13ecd4753b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7328534058726245037, guid: a0d5773c559ff0d4896a1b13ecd4753b, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7932391782393452071, guid: a0d5773c559ff0d4896a1b13ecd4753b, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9219817785720004973, guid: a0d5773c559ff0d4896a1b13ecd4753b, type: 3}
+      propertyPath: m_StaticEditorFlags
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -38352,9 +38508,25 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1888626623}
     m_Modifications:
+    - target: {fileID: 429301326043172350, guid: c5c003605f6eb53458cc63efda3bf3c7, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 821267505248934339, guid: c5c003605f6eb53458cc63efda3bf3c7, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3217458699966218365, guid: c5c003605f6eb53458cc63efda3bf3c7, type: 3}
       propertyPath: m_Name
       value: Bridge (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3217458699966218365, guid: c5c003605f6eb53458cc63efda3bf3c7, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6012568928544589745, guid: c5c003605f6eb53458cc63efda3bf3c7, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7183158470802979186, guid: c5c003605f6eb53458cc63efda3bf3c7, type: 3}
       propertyPath: possibleNeighbors.Array.size
@@ -38384,6 +38556,14 @@ PrefabInstance:
       propertyPath: possibleNeighbors.Array.data[5]
       value: 
       objectReference: {fileID: 6236970601260487267}
+    - target: {fileID: 7752790068530200706, guid: c5c003605f6eb53458cc63efda3bf3c7, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7758612961668204119, guid: c5c003605f6eb53458cc63efda3bf3c7, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8680730005119772132, guid: c5c003605f6eb53458cc63efda3bf3c7, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -38422,6 +38602,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8680730005119772132, guid: c5c003605f6eb53458cc63efda3bf3c7, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8761612507309528899, guid: c5c003605f6eb53458cc63efda3bf3c7, type: 3}
+      propertyPath: m_StaticEditorFlags
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -38482,9 +38666,29 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1048917801531629364, guid: 3ef6f19a255599441bb6ae493cc2ff2c, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1231043949656020799, guid: 3ef6f19a255599441bb6ae493cc2ff2c, type: 3}
       propertyPath: m_Name
       value: Half Bridge L C2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1231043949656020799, guid: 3ef6f19a255599441bb6ae493cc2ff2c, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1482762839410291114, guid: 3ef6f19a255599441bb6ae493cc2ff2c, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3541284190790682796, guid: 3ef6f19a255599441bb6ae493cc2ff2c, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4843534475271442391, guid: 3ef6f19a255599441bb6ae493cc2ff2c, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5074900950569370011, guid: 3ef6f19a255599441bb6ae493cc2ff2c, type: 3}
       propertyPath: possibleNeighbors.Array.size
@@ -38514,6 +38718,26 @@ PrefabInstance:
       propertyPath: possibleNeighbors.Array.data[5]
       value: 
       objectReference: {fileID: 221646353281402983}
+    - target: {fileID: 5895357639461692620, guid: 3ef6f19a255599441bb6ae493cc2ff2c, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6048647162609378465, guid: 3ef6f19a255599441bb6ae493cc2ff2c, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6048647162609378467, guid: 3ef6f19a255599441bb6ae493cc2ff2c, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8159786005953537722, guid: 3ef6f19a255599441bb6ae493cc2ff2c, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8193504691567339025, guid: 3ef6f19a255599441bb6ae493cc2ff2c, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -38686,9 +38910,45 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1888626623}
     m_Modifications:
+    - target: {fileID: 333487897077901219, guid: ed0fd335a12d72344bfae8500d23016b, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1399103612415843064, guid: ed0fd335a12d72344bfae8500d23016b, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1399103612415843066, guid: ed0fd335a12d72344bfae8500d23016b, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1460034894564374124, guid: ed0fd335a12d72344bfae8500d23016b, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1783999018733615027, guid: ed0fd335a12d72344bfae8500d23016b, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1842927348683919056, guid: ed0fd335a12d72344bfae8500d23016b, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2728701377881557998, guid: ed0fd335a12d72344bfae8500d23016b, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2735688051383403096, guid: ed0fd335a12d72344bfae8500d23016b, type: 3}
       propertyPath: m_Name
       value: Half Bridge L C
+      objectReference: {fileID: 0}
+    - target: {fileID: 2735688051383403096, guid: ed0fd335a12d72344bfae8500d23016b, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3553631667476218844, guid: ed0fd335a12d72344bfae8500d23016b, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5856474775146625403, guid: ed0fd335a12d72344bfae8500d23016b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -38758,6 +39018,10 @@ PrefabInstance:
       propertyPath: possibleNeighbors.Array.data[5]
       value: 
       objectReference: {fileID: 221646353281402983}
+    - target: {fileID: 8956639518275993169, guid: ed0fd335a12d72344bfae8500d23016b, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -38832,6 +39096,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3409677327689351572, guid: 3192490fa1ca00d498b00740373c1135, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3537550601153493624, guid: 3192490fa1ca00d498b00740373c1135, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3836866661582264306, guid: 3192490fa1ca00d498b00740373c1135, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4332483017196916650, guid: 3192490fa1ca00d498b00740373c1135, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4928699746176660744, guid: 3192490fa1ca00d498b00740373c1135, type: 3}
       propertyPath: possibleNeighbors.Array.size
       value: 6
@@ -38860,9 +39140,41 @@ PrefabInstance:
       propertyPath: possibleNeighbors.Array.data[5]
       value: 
       objectReference: {fileID: 6236970601260487267}
+    - target: {fileID: 5921654239332584100, guid: 3192490fa1ca00d498b00740373c1135, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6034265919925301075, guid: 3192490fa1ca00d498b00740373c1135, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6126369244143444090, guid: 3192490fa1ca00d498b00740373c1135, type: 3}
       propertyPath: m_Name
       value: Half Bridge R C
+      objectReference: {fileID: 0}
+    - target: {fileID: 6126369244143444090, guid: 3192490fa1ca00d498b00740373c1135, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6258901468966203372, guid: 3192490fa1ca00d498b00740373c1135, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7858955066029863367, guid: 3192490fa1ca00d498b00740373c1135, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7961439813715121966, guid: 3192490fa1ca00d498b00740373c1135, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9096673215349761413, guid: 3192490fa1ca00d498b00740373c1135, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9096673215349761415, guid: 3192490fa1ca00d498b00740373c1135, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -38888,6 +39200,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1888626623}
     m_Modifications:
+    - target: {fileID: 4894491319968235, guid: d4abc09542f61e646bb6874f3f9f82d0, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3476491940731837036, guid: d4abc09542f61e646bb6874f3f9f82d0, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3534962910984787488, guid: d4abc09542f61e646bb6874f3f9f82d0, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3869615873003345312, guid: d4abc09542f61e646bb6874f3f9f82d0, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6107912324515643937, guid: d4abc09542f61e646bb6874f3f9f82d0, type: 3}
       propertyPath: m_LocalPosition.x
       value: -5.68
@@ -38932,6 +39260,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: Half Bridge L
       objectReference: {fileID: 0}
+    - target: {fileID: 6433681215659805839, guid: d4abc09542f61e646bb6874f3f9f82d0, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6498861575292962677, guid: d4abc09542f61e646bb6874f3f9f82d0, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6498861575292962679, guid: d4abc09542f61e646bb6874f3f9f82d0, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7979083778608138090, guid: d4abc09542f61e646bb6874f3f9f82d0, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8364300181507402059, guid: d4abc09542f61e646bb6874f3f9f82d0, type: 3}
       propertyPath: possibleNeighbors.Array.size
       value: 6
@@ -38960,6 +39304,10 @@ PrefabInstance:
       propertyPath: possibleNeighbors.Array.data[5]
       value: 
       objectReference: {fileID: 221646353281402983}
+    - target: {fileID: 9090926091785656295, guid: d4abc09542f61e646bb6874f3f9f82d0, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
