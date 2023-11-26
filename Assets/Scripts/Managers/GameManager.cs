@@ -38,7 +38,7 @@ public class GameManager : MonoBehaviour
         if (!PlayerPrefs.HasKey("RunTutorial"))
             PlayerPrefs.SetInt("RunTutorial",1);
         
-        
+        SoundManager.Instance.PlayGameplayMusic();
     }
 
     private void OnPlayerDead()

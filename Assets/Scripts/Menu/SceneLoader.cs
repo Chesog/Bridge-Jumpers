@@ -4,6 +4,12 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
+enum Scenes
+{
+    MENUSCENE,
+    GAMEPLAYSCENE,
+    CREDITSSCENE
+}
 public class SceneLoader : MonoBehaviour
 {
     [SerializeField] private GameObject loadingScreen;

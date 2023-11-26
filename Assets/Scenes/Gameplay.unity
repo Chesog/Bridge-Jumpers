@@ -37806,6 +37806,14 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3679826002274958620, guid: 84f54da781d8a5f46992271c7b7b66f2, type: 3}
+      propertyPath: dropSound
+      value: 
+      objectReference: {fileID: 8300000, guid: e06c7538282f0734787d05261f71baf2, type: 3}
+    - target: {fileID: 3679826002274958620, guid: 84f54da781d8a5f46992271c7b7b66f2, type: 3}
+      propertyPath: jumpSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 33b7d6c1ad7fc814692800babfeaa9c1, type: 3}
+    - target: {fileID: 3679826002274958620, guid: 84f54da781d8a5f46992271c7b7b66f2, type: 3}
       propertyPath: _maxTouchY
       value: 0.75
       objectReference: {fileID: 0}

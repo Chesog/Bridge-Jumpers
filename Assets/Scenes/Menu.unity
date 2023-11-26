@@ -4430,7 +4430,6 @@ MonoBehaviour:
   startGateAnimationParam: OpenGate
   startShopAnimationParam: GoToShop
   waitTime: 1
-  menuMusic: {fileID: 8300000, guid: e2a1f80de6f1a0441844461e2e1a6ffa, type: 3}
 --- !u!114 &811406674
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5548,6 +5547,18 @@ PrefabInstance:
       propertyPath: mainMenu
       value: 
       objectReference: {fileID: 8300000, guid: e2a1f80de6f1a0441844461e2e1a6ffa, type: 3}
+    - target: {fileID: 3157794998552900541, guid: 59426dd6ac2a6124296519aafc2451cc, type: 3}
+      propertyPath: menuMusic
+      value: 
+      objectReference: {fileID: 8300000, guid: e2a1f80de6f1a0441844461e2e1a6ffa, type: 3}
+    - target: {fileID: 3157794998552900541, guid: 59426dd6ac2a6124296519aafc2451cc, type: 3}
+      propertyPath: creditsMusic
+      value: 
+      objectReference: {fileID: 8300000, guid: 09ea4ce560d132243a811e3ed24f4bf7, type: 3}
+    - target: {fileID: 3157794998552900541, guid: 59426dd6ac2a6124296519aafc2451cc, type: 3}
+      propertyPath: gameplayMusic
+      value: 
+      objectReference: {fileID: 8300000, guid: c5dcbb3d402bb2f41aaab3da9ddeda31, type: 3}
     - target: {fileID: 3157794998552900542, guid: 59426dd6ac2a6124296519aafc2451cc, type: 3}
       propertyPath: m_Name
       value: SoundManager

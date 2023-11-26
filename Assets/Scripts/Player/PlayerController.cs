@@ -10,6 +10,8 @@ public class PlayerController : MonoBehaviour
     public bool canJump;
     public UnityAction OnPlayerDead;
     [SerializeField] public FloatingJoystick variableJoystick;
+    [SerializeField] private AudioClip jumpSound;
+    [SerializeField] private AudioClip dropSound;
     [SerializeField] private Rigidbody _rigidbody;
     [SerializeField] private Vector3 _verticalforce;
     [SerializeField] private Vector3 _verticalforceDown;
@@ -21,7 +23,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float _maxTouchY;
     [SerializeField] private float _minTouchY;
     [SerializeField] private float _moveSpeed;
-    
+
 
     private void OnEnable()
     {
@@ -34,7 +36,7 @@ public class PlayerController : MonoBehaviour
         Debug.Log("Selected Char " + _selectedCharacter);
         PlayerPrefs.Save();
         int lenght = _characters.Length;
-        
+
         for (int i = 0; i < lenght; i++)
         {
             if (i == _selectedCharacter)
@@ -52,29 +54,51 @@ public class PlayerController : MonoBehaviour
             {
                 _rigidbody.velocity = Vector3.zero;
                 _rigidbody.AddForce(_verticalforce, ForceMode.Impulse);
+                if (!SoundManager.Instance.GetMusicSource().isPlaying)
+                    SoundManager.Instance.PlaySound(jumpSound);
             }
         }
 
         if (variableJoystick.Vertical < _minTouchY)
         {
-            _rigidbody.AddForce(_verticalforceDown, ForceMode.Impulse);
+            if (!isGrounded())
+            {
+                _rigidbody.AddForce(_verticalforceDown, ForceMode.Impulse);
+                if (!SoundManager.Instance.GetEffectSource().isPlaying)
+                    SoundManager.Instance.PlaySound(dropSound);
+            }
         }
 
         _horizontalforce.x = variableJoystick.Horizontal * _moveSpeed;
         _rigidbody.AddForce(_horizontalforce, ForceMode.Force);
     }
 
-    public void AddPlayerScore(int value) { _playerScore += value; }
+    public void AddPlayerScore(int value)
+    {
+        _playerScore += value;
+    }
 
     public void AddPlayerMoney(int value)
     {
         _playerMoney += value;
-        PlayerPrefs.SetInt("PlayerMoney",_playerMoney);
+        PlayerPrefs.SetInt("PlayerMoney", _playerMoney);
         PlayerPrefs.Save();
     }
-    public int GetPlayerScore() { return _playerScore; }
-    public int GetPlayerMoney() { return _playerMoney; }
-    public void ResetPlayerScore() { _playerScore = 0; }
+
+    public int GetPlayerScore()
+    {
+        return _playerScore;
+    }
+
+    public int GetPlayerMoney()
+    {
+        return _playerMoney;
+    }
+
+    public void ResetPlayerScore()
+    {
+        _playerScore = 0;
+    }
 
     public void DestroyPlayer()
     {
@@ -84,9 +108,14 @@ public class PlayerController : MonoBehaviour
         {
             Handheld.Vibrate();
         }
+
         gameObject.SetActive(false);
     }
-    public void RespawnPlayer() { gameObject.SetActive(true); }
+
+    public void RespawnPlayer()
+    {
+        gameObject.SetActive(true);
+    }
 
     /// <summary>
     /// Check If The Player Is At Ground Level

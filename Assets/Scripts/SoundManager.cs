@@ -9,6 +9,9 @@ public class SoundManager : MonoBehaviour
 
     [SerializeField] private AudioSource musicSource;
     [SerializeField] private AudioSource effectSource;
+    [SerializeField] private AudioClip menuMusic;
+    [SerializeField] private AudioClip gameplayMusic;
+    [SerializeField] private AudioClip creditsMusic;
 
 
     private void OnEnable()
@@ -70,6 +73,11 @@ public class SoundManager : MonoBehaviour
     {
         return musicSource;
     }
+    
+    public AudioSource GetEffectSource()
+    {
+        return effectSource;
+    }
 
     /// <summary>
     /// Toggle The Music && SFX To Mute or UN Mute
@@ -88,5 +96,26 @@ public class SoundManager : MonoBehaviour
     public void ChangeSFX_Volume(float volume) 
     {
         effectSource.volume = volume;
+    }
+
+    public void PlayMenuMusic()
+    {
+        musicSource.Stop();
+        musicSource.clip = menuMusic;
+        musicSource.Play();
+    }
+    
+    public void PlayGameplayMusic()
+    {
+        musicSource.Stop();
+        musicSource.clip = gameplayMusic;
+        musicSource.Play();
+    }
+    
+    public void PlayCreditsMusic()
+    {
+        musicSource.Stop();
+        musicSource.clip = creditsMusic;
+        musicSource.Play();
     }
 }
