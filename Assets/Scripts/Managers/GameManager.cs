@@ -35,6 +35,10 @@ public class GameManager : MonoBehaviour
         Application.targetFrameRate = (int)Screen.currentResolution.refreshRateRatio.value;
         DontDestroyOnLoad(this);
         playerHighScore = PlayerPrefs.GetInt("PlayerHighScore");
+        if (!PlayerPrefs.HasKey("RunTutorial"))
+            PlayerPrefs.SetInt("RunTutorial",1);
+        
+        
     }
 
     private void OnPlayerDead()
