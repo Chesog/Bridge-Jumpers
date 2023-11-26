@@ -17,9 +17,12 @@ public class PlayerAnimController : MonoBehaviour
 
     private void Update()
     {
-        Vector3 temp = Vector3.zero;
-        temp.x = variableJoystick.Horizontal;
-        temp.y = variableJoystick.Vertical;
-        _animator.SetFloat(animatorParam,temp.magnitude - temp.z);
+        if (variableJoystick != null)
+        {
+            Vector3 temp = Vector3.zero;
+            temp.x = variableJoystick.Horizontal;
+            temp.y = variableJoystick.Vertical;
+            _animator.SetFloat(animatorParam,temp.magnitude - temp.z);
+        }
     }
 }

@@ -6,13 +6,12 @@ using UnityEngine.Audio;
 public class SoundManager : MonoBehaviour
 {
     public static SoundManager Instance;
+
     [SerializeField] private AudioSource musicSource;
     [SerializeField] private AudioSource effectSource;
-    [SerializeField] public AudioClip button;
-    [SerializeField] public AudioClip mainMenu;
 
 
-    private void Awake()
+    private void OnEnable()
     {
         if (Instance == null)
         {
@@ -23,30 +22,71 @@ public class SoundManager : MonoBehaviour
         {
             Destroy(this.gameObject);
         }
-
     }
 
+
+    /// <summary>
+    /// Function To PLay An One Shot Of a Audio Clip That you Give it By Parameterr
+    /// </summary>
+    /// <param name="clip"></param>
     public void PlaySound(AudioClip clip)
     {
         effectSource.PlayOneShot(clip);
     }
-    public void PlayButtonSound()
+
+    /// <summary>
+    /// Function To Play An One Shot Of A Audio Clip at a certain volume That you Give it By Parameter
+    /// </summary>
+    /// <param name="clip"></param>
+    /// <param name="volume"></param>
+    public void PlaySound(AudioClip clip, float volume)
     {
-        effectSource.PlayOneShot(button);
+        effectSource.PlayOneShot(clip, volume);
     }
 
+    /// <summary>
+    /// Play A Music That you Give it By Parameter
+    /// </summary>
+    /// <param name="clip"></param>
+    public void PlayMusic(AudioClip clip)
+    {
+        musicSource.clip = clip;
+        musicSource.Play();
+    }
+
+    /// <summary>
+    /// Stops The Current Music Audio Clip
+    /// </summary>
+    public void StopMusic()
+    {
+        musicSource.Stop();
+    }
+
+    /// <summary>
+    /// Returns The Audio Source For The Music
+    /// </summary>
+    /// <returns></returns>
     public AudioSource GetMusicSource()
     {
         return musicSource;
     }
-    public void ToggleEffects()
+
+    /// <summary>
+    /// Toggle The Music && SFX To Mute or UN Mute
+    /// </summary>
+    public void ToggleAudio()
     {
         effectSource.mute = !effectSource.mute;
-    }
-
-    public void ToggleMusic()
-    {
         musicSource.mute = !musicSource.mute;
     }
-   
+
+    public void ChangeMusic_Volume(float volume) 
+    {
+        musicSource.volume = volume;
+    }
+
+    public void ChangeSFX_Volume(float volume) 
+    {
+        effectSource.volume = volume;
+    }
 }

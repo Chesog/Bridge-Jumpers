@@ -12,6 +12,7 @@ public class MenuAnimationController : MonoBehaviour
     [SerializeField] private string startGateAnimationParam;
     [SerializeField] private string startShopAnimationParam;
     [SerializeField] private float waitTime;
+    [SerializeField] private AudioClip menuMusic;
     private IEnumerator openGate;
 
     private void OnEnable()
@@ -20,6 +21,8 @@ public class MenuAnimationController : MonoBehaviour
             cameraAnimator = GetComponent<Animator>();
 
         openGate = OpenGate();
+        
+        SoundManager.Instance.PlayMusic(menuMusic);
     }
 
     private IEnumerator OpenGate()
