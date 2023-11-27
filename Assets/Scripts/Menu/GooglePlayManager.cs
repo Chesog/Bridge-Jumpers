@@ -4,9 +4,21 @@ using UnityEngine;
 
 public class GooglePlayManager : MonoBehaviour
 {
+    public static GooglePlayManager Instance;
+
     public void Start()
     {
         SingIn();
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+        else
+        {
+            Destroy(this);
+        }
+        
+        UnlockAchievemt(GPGSIds.achievement_first_time_jumper);
     }
 
     public void SingIn()
@@ -20,7 +32,7 @@ public class GooglePlayManager : MonoBehaviour
         {
             // Continue with Play Games Services
             Debug.Log($"{nameof(GooglePlayManager)} : Sing in Success");
-        } 
+        }
         else
         {
             // Disable your integration with Play Games Services or show a login button
@@ -29,4 +41,18 @@ public class GooglePlayManager : MonoBehaviour
             Debug.Log($"{nameof(GooglePlayManager)} : Sing in Failed");
         }
     }
+
+    #region ACHIEVEMENTS
+
+    public static void UnlockAchievemt(string id)
+    {
+        PlayGamesPlatform.Instance.ReportProgress(id, 100, success => { });
+    }
+
+    public static void ShowAchievementsUI()
+    {
+        PlayGamesPlatform.Instance.ShowAchievementsUI();
+    }
+
+    #endregion
 }

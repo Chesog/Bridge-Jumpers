@@ -138,11 +138,11 @@ public class CharacterShop : MonoBehaviour
                 case 6:
                 case 7:
                 case 8:
-                    PlayGamesArchivements.Instance.AxeToMeetYou();
+                    GooglePlayManager.UnlockAchievemt(GPGSIds.achievement_axe_to_meet_you);
                     break;
                 case 9:
                 case 10:
-                    PlayGamesArchivements.Instance.TheMadKing();
+                    GooglePlayManager.UnlockAchievemt(GPGSIds.achievement_the_mad_king);
                     break;
                 case 3:
                     break;
@@ -152,7 +152,7 @@ public class CharacterShop : MonoBehaviour
                 case 12:
                 case 13:
                 case 14:
-                    PlayGamesArchivements.Instance.LetTheMagicBegin();
+                    GooglePlayManager.UnlockAchievemt(GPGSIds.achievement_let_the_magic_begin);
                     break;
             }
         }
@@ -166,7 +166,7 @@ public class CharacterShop : MonoBehaviour
         }
         
         if (charactersBuyed == lenght -1)
-            PlayGamesArchivements.Instance.UniteTheKingdom();
+            GooglePlayManager.UnlockAchievemt(GPGSIds.achievement_unite_the_kingdom);
     }
 
     public void SelecCharacter()

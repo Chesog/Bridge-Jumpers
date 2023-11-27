@@ -40,6 +40,7 @@ public class WatterBehaviour : MonoBehaviour
     {
         _isCorrutineRuning = true;
         yield return new WaitForSeconds(_moveTime);
+        _rigidbody.velocity = Vector3.zero;
         _rigidbody.AddForce(_force, ForceMode.Force);
         yield return null;
         _isCorrutineRuning = false;

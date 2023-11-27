@@ -12,70 +12,39 @@ public class PlayGamesArchivements : MonoBehaviour
 
     private void Start()
     {
-        throw new NotImplementedException();
-    }
-
-    private void OnEnable()
-    {
         if (Instance == null)
         {
             Instance = this;
-            DontDestroyOnLoad(this.gameObject);
         }
-        else
-        {
-            Destroy(this.gameObject);
-        }
-
-        try
-        {
 #if UNITY_ANDROID
-            if (Social.localUser.authenticated)
-                hasBeenAutenticated = true;
-            if (!PlayerPrefs.HasKey("FirstTime"))
-                OpenForTheFirstTime();
+        if (PlayGamesPlatform.Instance.localUser.authenticated)
+            hasBeenAutenticated = true;
+
+        if (!PlayerPrefs.HasKey("FirstTime"))
+            OpenForTheFirstTime();
+        Debug.Log("PlayGamesPlatform.Instance.localUser.authenticated : " + PlayGamesPlatform.Instance.localUser.authenticated);
 #endif
-        }
-        catch (Exception e)
-        {
-            Console.WriteLine(e);
-            hasBeenAutenticated = false;
-            throw;
-        }
     }
 
     public void ShowAchievements()
     {
 #if UNITY_ANDROID
-        if (hasBeenAutenticated)
-        {
-            Social.ShowAchievementsUI();
-        }
+        if (PlayGamesPlatform.Instance.localUser.authenticated)
+            PlayGamesPlatform.Instance.ShowAchievementsUI();
 #endif
     }
 
     public void OpenForTheFirstTime()
     {
 #if UNITY_ANDROID
-        if (hasBeenAutenticated)
+        if (PlayGamesPlatform.Instance.localUser.authenticated)
         {
-            Social.ReportProgress("CgkI3Ji-p9sLEAIQAQ",100f, succes =>  {
+            PlayGamesPlatform.Instance.ReportProgress("CgkI3Ji-p9sLEAIQAQ", 100f, succes =>
+            {
                 if (succes)
                 {
                     Debug.Log("Achievement unlocked: FirstTime");
-                    PlayerPrefs.SetString("FirstTime","FirstTime");
-                }
-                else
-                {
-                    Debug.LogError("Failed to unlock achievement: ");
-                }
-            });
-            
-            PlayGamesPlatform.Instance.ReportProgress("CgkI3Ji-p9sLEAIQAQ",100f, succes =>  {
-                if (succes)
-                {
-                    Debug.Log("Achievement unlocked: FirstTime");
-                    PlayerPrefs.SetString("FirstTime","FirstTime");
+                    PlayerPrefs.SetString("FirstTime", "FirstTime");
                 }
                 else
                 {
@@ -85,32 +54,18 @@ public class PlayGamesArchivements : MonoBehaviour
         }
 #endif
     }
-    
+
     public void TheMadKing()
     {
 #if UNITY_ANDROID
-        if (hasBeenAutenticated)
+        if (!PlayerPrefs.HasKey("TheMadKing"))
         {
-            if (!PlayerPrefs.HasKey("TheMadKing"))
+            PlayGamesPlatform.Instance.ReportProgress("CgkI3Ji-p9sLEAIQAg", 100f, succes =>
             {
-                Social.ReportProgress("CgkI3Ji-p9sLEAIQAg",100f, succes => {
-                    if (succes)
-                    {
-                        Debug.Log("Achievement unlocked: TheMadKing");
-                        PlayerPrefs.SetString("TheMadKing","TheMadKing");
-                    }
-                    else
-                    {
-                        Debug.LogError("Failed to unlock achievement: ");
-                    }
-                });
-            }
-            
-            PlayGamesPlatform.Instance.ReportProgress("CgkI3Ji-p9sLEAIQAg",100f, succes =>  {
                 if (succes)
                 {
                     Debug.Log("Achievement unlocked: TheMadKing");
-                    PlayerPrefs.SetString("TheMadKing","TheMadKing");
+                    PlayerPrefs.SetString("TheMadKing", "TheMadKing");
                 }
                 else
                 {
@@ -120,32 +75,18 @@ public class PlayGamesArchivements : MonoBehaviour
         }
 #endif
     }
-    
+
     public void LetTheMagicBegin()
     {
 #if UNITY_ANDROID
-        if (hasBeenAutenticated)
+        if (!PlayerPrefs.HasKey("LetTheMagicBegin"))
         {
-            if (!PlayerPrefs.HasKey("LetTheMagicBegin"))
+            PlayGamesPlatform.Instance.ReportProgress("CgkI3Ji-p9sLEAIQAw", 100f, succes =>
             {
-                Social.ReportProgress("CgkI3Ji-p9sLEAIQAw",100f, succes => {
-                    if (succes)
-                    {
-                        Debug.Log("Achievement unlocked: LetTheMagicBegin");
-                        PlayerPrefs.SetString("LetTheMagicBegin","LetTheMagicBegin");
-                    }
-                    else
-                    {
-                        Debug.LogError("Failed to unlock achievement: LetTheMagicBegin");
-                    }
-                });
-            }
-            
-            PlayGamesPlatform.Instance.ReportProgress("CgkI3Ji-p9sLEAIQAw",100f, succes =>  {
                 if (succes)
                 {
                     Debug.Log("Achievement unlocked: LetTheMagicBegin");
-                    PlayerPrefs.SetString("LetTheMagicBegin","LetTheMagicBegin");
+                    PlayerPrefs.SetString("LetTheMagicBegin", "LetTheMagicBegin");
                 }
                 else
                 {
@@ -155,67 +96,39 @@ public class PlayGamesArchivements : MonoBehaviour
         }
 #endif
     }
-    
+
     public void UniteTheKingdom()
     {
 #if UNITY_ANDROID
-        if (hasBeenAutenticated)
+        if (!PlayerPrefs.HasKey("UniteTheKingdom"))
         {
-            if (!PlayerPrefs.HasKey("UniteTheKingdom"))
+            Social.ReportProgress("CgkI3Ji-p9sLEAIQBA", 100f, succes =>
             {
-                Social.ReportProgress("CgkI3Ji-p9sLEAIQBA",100f, succes => {
-                    if (succes)
-                    {
-                        Debug.Log("Achievement unlocked: UniteTheKingdom");
-                        PlayerPrefs.SetString("UniteTheKingdom","UniteTheKingdom");
-                    }
-                    else
-                    {
-                        Debug.LogError("Failed to unlock achievement: UniteTheKingdom");
-                    }
-                });
-                
-                PlayGamesPlatform.Instance.ReportProgress("CgkI3Ji-p9sLEAIQBA",100f, succes =>  {
-                    if (succes)
-                    {
-                        Debug.Log("Achievement unlocked: UniteTheKingdom");
-                        PlayerPrefs.SetString("UniteTheKingdom","UniteTheKingdom");
-                    }
-                    else
-                    {
-                        Debug.LogError("Failed to unlock achievement: UniteTheKingdom");
-                    }
-                });
-            }
+                if (succes)
+                {
+                    Debug.Log("Achievement unlocked: UniteTheKingdom");
+                    PlayerPrefs.SetString("UniteTheKingdom", "UniteTheKingdom");
+                }
+                else
+                {
+                    Debug.LogError("Failed to unlock achievement: UniteTheKingdom");
+                }
+            });
         }
 #endif
     }
-    
+
     public void AxeToMeetYou()
     {
 #if UNITY_ANDROID
-        if (hasBeenAutenticated)
+        if (!PlayerPrefs.HasKey("AxeToMeetYou"))
         {
-            if (!PlayerPrefs.HasKey("AxeToMeetYou"))
+            PlayGamesPlatform.Instance.ReportProgress("CgkI3Ji-p9sLEAIQBQ", 100f, succes =>
             {
-                Social.ReportProgress("CgkI3Ji-p9sLEAIQBQ",100f, succes => {
-                    if (succes)
-                    {
-                        Debug.Log("Achievement unlocked: AxeToMeetYou");
-                        PlayerPrefs.SetString("AxeToMeetYou","AxeToMeetYou");
-                    }
-                    else
-                    {
-                        Debug.LogError("Failed to unlock achievement: ");
-                    }
-                });
-            }
-            
-            PlayGamesPlatform.Instance.ReportProgress("CgkI3Ji-p9sLEAIQBQ",100f, succes =>  {
                 if (succes)
                 {
                     Debug.Log("Achievement unlocked: AxeToMeetYou");
-                    PlayerPrefs.SetString("AxeToMeetYou","AxeToMeetYou");
+                    PlayerPrefs.SetString("AxeToMeetYou", "AxeToMeetYou");
                 }
                 else
                 {
