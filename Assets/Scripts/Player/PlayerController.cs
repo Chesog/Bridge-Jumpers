@@ -29,8 +29,10 @@ public class PlayerController : MonoBehaviour
     {
         if (_rigidbody == null)
             _rigidbody = GetComponentInChildren<Rigidbody>();
+        
         ResetPlayerScore();
         RespawnPlayer();
+        
         _playerMoney = PlayerPrefs.GetInt("PlayerMoney");
         _selectedCharacter = PlayerPrefs.GetInt("PlayerCharacter");
         Debug.Log("Selected Char " + _selectedCharacter);

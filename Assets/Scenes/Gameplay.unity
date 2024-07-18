@@ -9785,7 +9785,8 @@ MonoBehaviour:
   _isCorrutineRuning: 0
   _rigidbody: {fileID: 526595328}
   _moveTime: 2.5
-  _force: {x: 0, y: 5, z: 0}
+  _force: {x: 0, y: 150, z: 0}
+  _playerController: {fileID: 2057823383}
 --- !u!54 &526595328
 Rigidbody:
   m_ObjectHideFlags: 0

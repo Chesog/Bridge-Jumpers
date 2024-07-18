@@ -107,6 +107,7 @@ public class GameManager : MonoBehaviour
             playerHighScore = value;
         PlayerPrefs.SetInt("PlayerHighScore", playerHighScore);
         PlayerPrefs.Save();
+        SaveDataHandler.Instance.SaveDataToJson();
     }
 
     private void OnDestroy()

@@ -93,6 +93,7 @@ public class PlayGamesArchivements : MonoBehaviour
                     Debug.LogError("Failed to unlock achievement: LetTheMagicBegin");
                 }
             });
+           
         }
 #endif
     }
@@ -139,3 +140,4 @@ public class PlayGamesArchivements : MonoBehaviour
 #endif
     }
 }
+

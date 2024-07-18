@@ -10,6 +10,7 @@ public class WatterBehaviour : MonoBehaviour
     [SerializeField] private Rigidbody _rigidbody;
     [SerializeField] private float _moveTime;
     [SerializeField] private Vector3 _force;
+    [SerializeField] private PlayerController _playerController;
 
 
     private void OnEnable()
@@ -65,7 +66,7 @@ public class WatterBehaviour : MonoBehaviour
 
         if (other.tag == "Player")
         {
-            other.GetComponentInParent<PlayerController>().DestroyPlayer();
+            _playerController.DestroyPlayer();
             _canMove = false;
         }
     }

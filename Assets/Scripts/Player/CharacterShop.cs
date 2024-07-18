@@ -1,15 +1,21 @@
 using TMPro;
 using UnityEngine;
 
-public class CharacterShop : MonoBehaviour
+public class CharacterShop : MonoBehaviourSingleton<CharacterShop>
 {
-    [SerializeField] private Character[] _characters;
+    [SerializeField] public Character[] _characters;
     [SerializeField] private TextMeshProUGUI characterName;
     [SerializeField] private TextMeshProUGUI characterPrice;
     [SerializeField] private TextMeshProUGUI playerMoneyText;
     [SerializeField] private GameObject[] _buyButtons;
     [SerializeField] private int _playerMoney;
     private int _currentIndex;
+
+    private void Start()
+    {
+        SaveDataHandler.Instance._characters = _characters;
+        SaveDataHandler.Instance.LoadData();
+    }
 
     private void OnEnable()
     {
@@ -125,6 +131,7 @@ public class CharacterShop : MonoBehaviour
             PlayerPrefs.SetInt(_characters[_currentIndex].name,1);
             PlayerPrefs.SetInt("PlayerMoney",_playerMoney);
             PlayerPrefs.Save();
+            SaveDataHandler.Instance.SaveDataToJson();
             playerMoneyText.text = _playerMoney.ToString();
             _buyButtons[0].SetActive(false);
             _buyButtons[1].SetActive(true);
@@ -179,6 +186,7 @@ public class CharacterShop : MonoBehaviour
                 _characters[_currentIndex].isSelected = true;
                 PlayerPrefs.SetInt("PlayerCharacter",_currentIndex);
                 _buyButtons[1].GetComponentInChildren<TextMeshProUGUI>().SetText("Selected");
+                SaveDataHandler.Instance.SaveDataToJson();
             }
             else
                 _characters[_currentIndex].isSelected = false;
