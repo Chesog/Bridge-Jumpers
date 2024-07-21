@@ -51,6 +51,7 @@ public class SaveDataHandler : MonoBehaviourSingleton<SaveDataHandler>
                         PlayerHighScore = PlayerPrefs.GetInt("PlayerHighScore"),
                         PlayerMoney = PlayerPrefs.GetInt("PlayerMoney"),
                         RunTutorial = PlayerPrefs.GetInt("RunTutorial"),
+                        PlayerDeaths = PlayerPrefs.GetInt("CurrentDeaths"),
                     };
                     for (int i = 0; i < _characters.Length; i++)
                     {
@@ -117,6 +118,7 @@ public class SaveDataHandler : MonoBehaviourSingleton<SaveDataHandler>
                             PlayerPrefs.SetInt("PlayerHighScore",data.PlayerHighScore);
                             PlayerPrefs.SetInt("PlayerMoney",data.PlayerMoney);
                             PlayerPrefs.SetInt("RunTutorial",data.RunTutorial);
+                            PlayerPrefs.SetInt("CurrentDeaths",data.PlayerDeaths);
 
                             for (int i = 0; i < data.gameCharacters.Length; i++)
                             {
@@ -137,6 +139,7 @@ public class SaveData
     public int PlayerHighScore;
     public int PlayerMoney;
     public int RunTutorial;
+    public int PlayerDeaths;
     public int[] gameCharacters;
 }
 

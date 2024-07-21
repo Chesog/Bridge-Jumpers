@@ -18,9 +18,12 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject _losePanel;
     [SerializeField] private int playerHighScore;
     [SerializeField] private int minScoreToSpawn;
+    [SerializeField] private int maxDeaths = 5;
     private bool isGamePaused;
     private static GameManager instance;
     private int _selectedCharacter;
+    private int currentDeaths;
+    private int colectedCoins;
 
     private void OnEnable()
     {
@@ -37,12 +40,26 @@ public class GameManager : MonoBehaviour
         playerHighScore = PlayerPrefs.GetInt("PlayerHighScore");
         if (!PlayerPrefs.HasKey("RunTutorial"))
             PlayerPrefs.SetInt("RunTutorial",1);
+
+        if (PlayerPrefs.HasKey("CurrentDeaths"))
+            currentDeaths = PlayerPrefs.GetInt("CurrentDeaths");
+        else
+            currentDeaths = 0;
         
         SoundManager.Instance.PlayGameplayMusic();
     }
 
     private void OnPlayerDead()
     {
+        currentDeaths++;
+        if (currentDeaths >= maxDeaths)
+        {
+            UnityAdsManager.Instance.LoadNonRewardedAd();
+            currentDeaths = 0;
+        }
+
+        
+            
         _bridgeManager.canSpawn = false;
         _watterBehaviour._canMove = false;
         _scorePanel.SetActive(false);
@@ -50,6 +67,8 @@ public class GameManager : MonoBehaviour
         _losePanel.SetActive(true);
         _scoreDisplayLose.text = "Player Score :" + _playerController.GetPlayerScore();
         _HighscoreDisplayLose.text = "High Score : " + playerHighScore;
+        
+        PlayerPrefs.SetInt("CurrentDeaths",currentDeaths);
     }
 
     public static GameManager Instance
@@ -99,6 +118,14 @@ public class GameManager : MonoBehaviour
     public void AddCoins(int value)
     {
         _playerController.AddPlayerMoney(value);
+        colectedCoins += value;
+    }
+
+    public void AddRewardCoins()
+    {
+        UnityAdsManager.Instance.LoadRewardedAd();
+        int rewardCoins = colectedCoins * 2;
+        AddCoins(rewardCoins);
     }
 
     public void SetPlayerHighScore(int value)

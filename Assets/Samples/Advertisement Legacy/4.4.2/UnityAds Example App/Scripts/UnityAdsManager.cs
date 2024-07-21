@@ -3,7 +3,7 @@ using System.Collections;
 using UnityEngine.Advertisements;
 using UnityEngine;
 
-public class UnityAdsManager : MonoBehaviour, IUnityAdsInitializationListener, IUnityAdsLoadListener, IUnityAdsShowListener
+public class UnityAdsManager : MonoBehaviourSingleton<UnityAdsManager>, IUnityAdsInitializationListener, IUnityAdsLoadListener, IUnityAdsShowListener
 {
     public string GAME_ID = "5661372"; //replace with your gameID from dashboard. note: will be different for each platform.
 
@@ -23,6 +23,7 @@ public class UnityAdsManager : MonoBehaviour, IUnityAdsInitializationListener, I
     private void OnEnable()
     {
         Initialize();
+        DontDestroyOnLoad(this);
     }
 
     public void Initialize()
