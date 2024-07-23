@@ -30,7 +30,7 @@ public class UnityAdsExampleUI : MonoBehaviour
 
     private void Start()
     {
-        initBtn.onClick.AddListener(unityAdsManager.Initialize);
+        //initBtn.onClick.AddListener(unityAdsManager.Initialize);
         initBtn.onClick.AddListener(()=> debugLogText.text = "DEBUG LOG: \n");
 
         loadRewardedBtn.onClick.AddListener(unityAdsManager.LoadRewardedAd);

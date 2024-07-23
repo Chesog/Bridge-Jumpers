@@ -5,16 +5,26 @@ using GooglePlayGames.BasicApi;
 using GooglePlayGames.BasicApi.SavedGame;
 using UnityEngine;
 
-public class SaveDataHandler : MonoBehaviourSingleton<SaveDataHandler>
+public class SaveDataHandler : MonoBehaviour
 {
         private bool isLoading = false;
         private bool isSaving;
         [SerializeField] string fileName = "BridgeJumpers_SaveFile";
         [SerializeField] public Character[] _characters;
+        public static SaveDataHandler instance;
 
         private void OnEnable()
         {
-            DontDestroyOnLoad(this);
+            if (instance == null)
+            {
+                instance = this;
+                DontDestroyOnLoad(this);
+            }
+            else
+            {
+                Destroy(this.gameObject);
+            }
+           LoadData();
         }
 
         public void SaveDataToJson()

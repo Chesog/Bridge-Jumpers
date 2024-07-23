@@ -103,7 +103,7 @@ public class PlayerController : MonoBehaviour
 
     public void DestroyPlayer()
     {
-        GameManager.Instance.SetPlayerHighScore(_playerScore);
+        GameManager.instance.SetPlayerHighScore(_playerScore);
         OnPlayerDead?.Invoke();
         if (SystemInfo.supportsVibration)
         {

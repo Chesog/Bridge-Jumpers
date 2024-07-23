@@ -11,10 +11,10 @@ public class CharacterShop : MonoBehaviourSingleton<CharacterShop>
     [SerializeField] private int _playerMoney;
     private int _currentIndex;
 
-    private void Start()
+    private void Awake()
     {
-        SaveDataHandler.Instance._characters = _characters;
-        SaveDataHandler.Instance.LoadData();
+        SaveDataHandler.instance._characters = _characters;
+        SaveDataHandler.instance.LoadData();
     }
 
     private void OnEnable()
@@ -131,7 +131,7 @@ public class CharacterShop : MonoBehaviourSingleton<CharacterShop>
             PlayerPrefs.SetInt(_characters[_currentIndex].name,1);
             PlayerPrefs.SetInt("PlayerMoney",_playerMoney);
             PlayerPrefs.Save();
-            SaveDataHandler.Instance.SaveDataToJson();
+            SaveDataHandler.instance.SaveDataToJson();
             playerMoneyText.text = _playerMoney.ToString();
             _buyButtons[0].SetActive(false);
             _buyButtons[1].SetActive(true);
@@ -186,7 +186,7 @@ public class CharacterShop : MonoBehaviourSingleton<CharacterShop>
                 _characters[_currentIndex].isSelected = true;
                 PlayerPrefs.SetInt("PlayerCharacter",_currentIndex);
                 _buyButtons[1].GetComponentInChildren<TextMeshProUGUI>().SetText("Selected");
-                SaveDataHandler.Instance.SaveDataToJson();
+                SaveDataHandler.instance.SaveDataToJson();
             }
             else
                 _characters[_currentIndex].isSelected = false;

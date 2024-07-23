@@ -11,7 +11,7 @@ public class Coins : MonoBehaviour
         if (other.tag == "Player")
         {
             Debug.Log("Add Coint To the Player");
-            GameManager.Instance.AddCoins(points);
+            GameManager.instance.AddCoins(points);
             Destroy(this.gameObject);
         }
     }

@@ -3,39 +3,59 @@ using System.Collections;
 using UnityEngine.Advertisements;
 using UnityEngine;
 
-public class UnityAdsManager : MonoBehaviourSingleton<UnityAdsManager>, IUnityAdsInitializationListener, IUnityAdsLoadListener, IUnityAdsShowListener
+public class UnityAdsManager : MonoBehaviour, IUnityAdsInitializationListener, IUnityAdsLoadListener, IUnityAdsShowListener
 {
-    public string GAME_ID = "5661372"; //replace with your gameID from dashboard. note: will be different for each platform.
+    public static UnityAdsManager Instance;
 
-    private const string BANNER_PLACEMENT = "banner";
-    private const string VIDEO_PLACEMENT = "video";
-    private const string REWARDED_VIDEO_PLACEMENT = "rewardedVideo";
+    private void OnEnable()
+    {
+        if (Instance == null)
+        {
+            Instance = this;
+            InitializeAds();
+            DontDestroyOnLoad(this.gameObject);
+        }
+        else
+        {
+            Destroy(this.gameObject);
+        }
+    }
+
+    public string _iOSGameId = "5661373";
+    public string _androidGameId = "5661372";
+    private string _gameId;
+
+    private const string BANNER_PLACEMENT = "Banner_Android";
+    private const string VIDEO_PLACEMENT = "Interstitial_Android";
+    private const string REWARDED_VIDEO_PLACEMENT = "Rewarded_Android";
 
     [SerializeField] private BannerPosition bannerPosition = BannerPosition.BOTTOM_CENTER;
 
     private bool testMode = true;
     private bool showBanner = false;
-
-    //utility wrappers for debuglog
+    
     public delegate void DebugEvent(string msg);
+
     public static event DebugEvent OnDebugLog;
 
-    private void OnEnable()
+    public void InitializeAds()
     {
-        Initialize();
-        DontDestroyOnLoad(this);
-    }
-
-    public void Initialize()
-    {
-        if (Advertisement.isSupported)
+#if UNITY_IOS
+            _gameId = _iOSGameId;
+#elif UNITY_ANDROID
+        _gameId = _androidGameId;
+#elif UNITY_EDITOR
+            _gameId = _androidGameId; //Only for testing the functionality in the Editor
+#endif
+        if (!Advertisement.isInitialized && Advertisement.isSupported)
         {
-            DebugLog(Application.platform + " supported by Advertisement");
+            Advertisement.Initialize(_gameId, testMode, this);
+            Advertisement.Load(REWARDED_VIDEO_PLACEMENT, this);
+            Advertisement.Load(VIDEO_PLACEMENT, this);
         }
-        Advertisement.Initialize(GAME_ID, testMode, this);
     }
 
-    public void ToggleBanner() 
+    public void ToggleBanner()
     {
         showBanner = !showBanner;
 
@@ -53,7 +73,6 @@ public class UnityAdsManager : MonoBehaviourSingleton<UnityAdsManager>, IUnityAd
     public void LoadRewardedAd()
     {
         Advertisement.Load(REWARDED_VIDEO_PLACEMENT, this);
-        ShowRewardedAd();
     }
 
     public void ShowRewardedAd()
@@ -64,7 +83,6 @@ public class UnityAdsManager : MonoBehaviourSingleton<UnityAdsManager>, IUnityAd
     public void LoadNonRewardedAd()
     {
         Advertisement.Load(VIDEO_PLACEMENT, this);
-        ShowNonRewardedAd();
     }
 
     public void ShowNonRewardedAd()
@@ -73,6 +91,7 @@ public class UnityAdsManager : MonoBehaviourSingleton<UnityAdsManager>, IUnityAd
     }
 
     #region Interface Implementations
+
     public void OnInitializationComplete()
     {
         DebugLog("Init Success");
@@ -112,11 +131,12 @@ public class UnityAdsManager : MonoBehaviourSingleton<UnityAdsManager>, IUnityAd
     {
         DebugLog($"OnUnityAdsShowComplete: [{showCompletionState}]: {placementId}");
     }
+
     #endregion
 
     public void OnGameIDFieldChanged(string newInput)
     {
-        GAME_ID = newInput;
+        _gameId = newInput;
     }
 
     public void ToggleTestMode(bool isOn)

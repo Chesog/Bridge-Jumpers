@@ -1,5 +1,6 @@
 using System;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
@@ -19,15 +20,26 @@ public class GameManager : MonoBehaviour
     [SerializeField] private int playerHighScore;
     [SerializeField] private int minScoreToSpawn;
     [SerializeField] private int maxDeaths = 5;
-    private bool isGamePaused;
-    private static GameManager instance;
+    [SerializeField] private int currentDeaths;
+    
+    public static GameManager instance;
+    
     private int _selectedCharacter;
-    private int currentDeaths;
     private int colectedCoins;
+    private bool isGamePaused;
 
     private void OnEnable()
     {
-        instance = this;
+        if (instance == null)
+        {
+            instance = this;
+        }
+        else
+        {
+            Destroy(this.gameObject);
+        }
+        
+        
         if (_playerController == null)
             _playerController = FindObjectOfType<PlayerController>();
 
@@ -36,7 +48,7 @@ public class GameManager : MonoBehaviour
         _pausePanel.SetActive(false);
         _losePanel.SetActive(false);
         Application.targetFrameRate = (int)Screen.currentResolution.refreshRateRatio.value;
-        DontDestroyOnLoad(this);
+
         playerHighScore = PlayerPrefs.GetInt("PlayerHighScore");
         if (!PlayerPrefs.HasKey("RunTutorial"))
             PlayerPrefs.SetInt("RunTutorial",1);
@@ -54,7 +66,7 @@ public class GameManager : MonoBehaviour
         currentDeaths++;
         if (currentDeaths >= maxDeaths)
         {
-            UnityAdsManager.Instance.LoadNonRewardedAd();
+            UnityAdsManager.Instance.ShowNonRewardedAd();
             currentDeaths = 0;
         }
 
@@ -65,21 +77,12 @@ public class GameManager : MonoBehaviour
         _scorePanel.SetActive(false);
         _pausePanel.SetActive(false);
         _losePanel.SetActive(true);
-        _scoreDisplayLose.text = "Player Score :" + _playerController.GetPlayerScore();
+        _scoreDisplayLose.text = "Player Score : " + _playerController.GetPlayerScore();
         _HighscoreDisplayLose.text = "High Score : " + playerHighScore;
         
         PlayerPrefs.SetInt("CurrentDeaths",currentDeaths);
-    }
 
-    public static GameManager Instance
-    {
-        get
-        {
-            if (instance == null)
-                instance = new GameManager();
-
-            return instance;
-        }
+        SaveDataHandler.instance.SaveDataToJson();
     }
 
     public void ToglePause()
@@ -123,7 +126,7 @@ public class GameManager : MonoBehaviour
 
     public void AddRewardCoins()
     {
-        UnityAdsManager.Instance.LoadRewardedAd();
+        UnityAdsManager.Instance.ShowRewardedAd();
         int rewardCoins = colectedCoins * 2;
         AddCoins(rewardCoins);
     }
@@ -134,7 +137,7 @@ public class GameManager : MonoBehaviour
             playerHighScore = value;
         PlayerPrefs.SetInt("PlayerHighScore", playerHighScore);
         PlayerPrefs.Save();
-        SaveDataHandler.Instance.SaveDataToJson();
+        SaveDataHandler.instance.SaveDataToJson();
     }
 
     private void OnDestroy()

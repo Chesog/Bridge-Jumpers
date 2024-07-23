@@ -13,7 +13,7 @@ public class BridgeCollitionController : MonoBehaviour
             if (isMovementTrigger)
                 _bridge.canMove = true;
             else
-                GameManager.Instance.AddScore(points);
+                GameManager.instance.AddScore(points);
 
 
             Destroy(this);
