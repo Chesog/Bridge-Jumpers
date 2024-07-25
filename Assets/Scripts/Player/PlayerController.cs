@@ -101,6 +101,11 @@ public class PlayerController : MonoBehaviour
         _playerScore = 0;
     }
 
+    public string GetCharacterName()
+    {
+       return _characters[_selectedCharacter].GetComponent<Character>().name;
+    }
+
     public void DestroyPlayer()
     {
         GameManager.instance.SetPlayerHighScore(_playerScore);

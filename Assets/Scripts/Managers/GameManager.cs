@@ -59,6 +59,7 @@ public class GameManager : MonoBehaviour
             currentDeaths = 0;
         
         SoundManager.Instance.PlayGameplayMusic();
+
     }
 
     private void OnPlayerDead()
@@ -70,7 +71,7 @@ public class GameManager : MonoBehaviour
             currentDeaths = 0;
         }
 
-        
+        AnalyticsManager.instance.RecordHighScoreEvent(playerHighScore,_playerController.GetCharacterName());
             
         _bridgeManager.canSpawn = false;
         _watterBehaviour._canMove = false;

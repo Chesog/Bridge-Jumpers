@@ -6,9 +6,9 @@ using UnityEngine;
 public class Character : MonoBehaviour
 {
     public GameObject character;
-    public float index;
     public String name;
-    public float price;
+    public int index;
+    public int price;
     public bool isBought;
     public bool isSelected;
 }

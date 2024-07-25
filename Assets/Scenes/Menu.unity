@@ -9996,7 +9996,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 361232997}
         m_TargetAssemblyTypeName: AnalyticsManager, Assembly-CSharp
-        m_MethodName: RecordCrash
+        m_MethodName: SendTestEvent
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

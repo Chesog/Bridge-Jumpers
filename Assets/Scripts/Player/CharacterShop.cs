@@ -173,6 +173,8 @@ public class CharacterShop : MonoBehaviourSingleton<CharacterShop>
         
         if (charactersBuyed == lenght -1)
             GooglePlayManager.UnlockAchievemt(GPGSIds.achievement_unite_the_kingdom);
+        
+        AnalyticsManager.instance.RecordPurchaseEvent( _characters[_currentIndex].name, _characters[_currentIndex].price,_characters[_currentIndex].index);
     }
 
     public void SelecCharacter()
