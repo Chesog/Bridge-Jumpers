@@ -14,7 +14,6 @@ public class CharacterShop : MonoBehaviourSingleton<CharacterShop>
     private void Awake()
     {
         SaveDataHandler.instance._characters = _characters;
-        SaveDataHandler.instance.LoadData();
     }
 
     private void OnEnable()

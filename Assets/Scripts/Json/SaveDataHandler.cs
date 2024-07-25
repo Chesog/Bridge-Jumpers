@@ -24,7 +24,12 @@ public class SaveDataHandler : MonoBehaviour
             {
                 Destroy(this.gameObject);
             }
-           LoadData();
+            LoadData();
+        }
+
+        private void OnApplicationQuit()
+        {
+           SaveDataToJson();
         }
 
         public void SaveDataToJson()
