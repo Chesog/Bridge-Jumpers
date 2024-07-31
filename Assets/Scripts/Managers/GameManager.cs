@@ -82,8 +82,6 @@ public class GameManager : MonoBehaviour
         _HighscoreDisplayLose.text = "High Score : " + playerHighScore;
         
         PlayerPrefs.SetInt("CurrentDeaths",currentDeaths);
-
-        SaveDataHandler.instance.SaveDataToJson();
     }
 
     public void ToglePause()
@@ -138,7 +136,6 @@ public class GameManager : MonoBehaviour
             playerHighScore = value;
         PlayerPrefs.SetInt("PlayerHighScore", playerHighScore);
         PlayerPrefs.Save();
-        SaveDataHandler.instance.SaveDataToJson();
     }
 
     private void OnDestroy()

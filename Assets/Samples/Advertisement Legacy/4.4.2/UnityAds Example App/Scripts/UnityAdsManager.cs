@@ -12,13 +12,14 @@ public class UnityAdsManager : MonoBehaviour, IUnityAdsInitializationListener, I
         if (Instance == null)
         {
             Instance = this;
-            InitializeAds();
-            DontDestroyOnLoad(this.gameObject);
+            DontDestroyOnLoad(gameObject);
         }
         else
         {
-            Destroy(this.gameObject);
+            Destroy(gameObject);
         }
+        
+        InitializeAds();
     }
 
     public string _iOSGameId = "5661373";
@@ -50,9 +51,9 @@ public class UnityAdsManager : MonoBehaviour, IUnityAdsInitializationListener, I
         if (!Advertisement.isInitialized && Advertisement.isSupported)
         {
             Advertisement.Initialize(_gameId, testMode, this);
-            Advertisement.Load(REWARDED_VIDEO_PLACEMENT, this);
-            Advertisement.Load(VIDEO_PLACEMENT, this);
         }
+        Advertisement.Load(REWARDED_VIDEO_PLACEMENT, this);
+        Advertisement.Load(VIDEO_PLACEMENT, this);
     }
 
     public void ToggleBanner()
