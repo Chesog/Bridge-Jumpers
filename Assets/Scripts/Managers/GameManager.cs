@@ -50,6 +50,7 @@ public class GameManager : MonoBehaviour
         Application.targetFrameRate = (int)Screen.currentResolution.refreshRateRatio.value;
 
         playerHighScore = PlayerPrefs.GetInt("PlayerHighScore");
+        
         if (!PlayerPrefs.HasKey("RunTutorial"))
             PlayerPrefs.SetInt("RunTutorial",1);
 
@@ -94,7 +95,8 @@ public class GameManager : MonoBehaviour
             isGamePaused = false;
             _bridgeManager.canSpawn = true;
             _watterBehaviour._canMove = true;
-            _scoreDisplayPause.text = "Player Score :" + _playerController.GetPlayerScore();
+            
+            _scoreDisplayPause.text = "Player Score : " + _playerController.GetPlayerScore();
             _HighscoreDisplayPause.text = "High Score : " + playerHighScore;
         }
         else
@@ -105,6 +107,9 @@ public class GameManager : MonoBehaviour
             isGamePaused = true;
             _bridgeManager.canSpawn = false;
             _watterBehaviour._canMove = false;
+            
+            _scoreDisplayPause.text = "Player Score : " + _playerController.GetPlayerScore();
+            _HighscoreDisplayPause.text = "High Score : " + playerHighScore;
         }
     }
 

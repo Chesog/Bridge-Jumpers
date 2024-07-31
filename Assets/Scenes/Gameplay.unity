@@ -3603,8 +3603,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   character: {fileID: 145407195}
-  index: 0
   name: Peasant
+  index: 0
   price: 0
   isBought: 0
   isSelected: 1
